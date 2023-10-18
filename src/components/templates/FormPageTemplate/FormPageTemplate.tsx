@@ -10,7 +10,7 @@ interface IDashboardPageTemplate {
 export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
   testid
 }: IDashboardPageTemplate) => {
-  const [activeStep, setActiveStep] = useState('1');
+  const [activeStep] = useState('1');
 
   const renderActiveStep = (index: string) => {
     switch (index) {
