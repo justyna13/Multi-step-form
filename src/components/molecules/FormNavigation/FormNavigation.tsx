@@ -35,6 +35,7 @@ testid
     <div className="form-navigation" data-testid={testid}>
       {navigationSteps.map((step: NavigationStep) => (
         <FormStep
+          key={step.number}
           isActive={(step.number == '1')}
           testid={`form-step-${step.number}`}
           label={step.label}
