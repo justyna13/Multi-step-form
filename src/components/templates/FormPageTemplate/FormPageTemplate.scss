@@ -3,7 +3,11 @@
   width: 90vw;
   margin: auto;
   border-radius: 24px;
-  padding: 24px;
+  padding: 16px;
+}
+
+.form-wrapper {
+  display: flex;
 }
 
 @media (min-width: 1199px) {

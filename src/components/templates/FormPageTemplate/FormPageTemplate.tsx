@@ -1,6 +1,7 @@
 import "@/components/templates/FormPageTemplate/FormPageTemplate.scss";
 import { FormStepFirst, FormStepFourth, FormStepSecond, FormStepThird } from "@/components/organisms";
 import { useState } from "react";
+import { FormNavigation } from "@/components/molecules";
 
 interface IDashboardPageTemplate {
   testid: string;
@@ -25,9 +26,12 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
   }
   return (
     <div className="form-card" data-testid={testid}>
-      <form className="multipstep-form">
-        { renderActiveStep(activeStep)}
-      </form>
+      <div className="form-wrapper">
+        <FormNavigation testid={'form-navigation'} />
+        <form className="multipstep-form">
+          { renderActiveStep(activeStep)}
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,39 @@
+.form-step {
+  display: flex;
+  gap: 16px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+
+  &__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1rem;
+    background-color: transparent;
+  }
+
+  &__info {
+    color: $clr-text;
+    font-weight: lighter;
+    font-size: .8rem;
+    padding-bottom: 12px;
+  }
+
+  &__title {
+    color: $clr-text-step;
+    font-size: .9rem;
+  }
+
+  &.active {
+    .form-step__number {
+      color: $clr-text-step-active;
+      background-color: $clr-step-active;
+      border-color: transparent;
+    }
+  }
+}
