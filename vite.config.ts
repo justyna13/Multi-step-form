@@ -14,6 +14,13 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, './src')
       }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "@/assets/styles/_variables.scss";`
+        }
+      }
     }
   };
 });

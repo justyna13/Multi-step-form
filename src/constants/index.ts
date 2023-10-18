@@ -3,6 +3,6 @@ const withBasePath = (path: string) =>
 
 export const Slugs = {
   // Main pages
-  DASHBOARD: withBasePath('/dashboard'),
+  FORM: withBasePath('/form'),
   NOT_FOUND: '*'
 };

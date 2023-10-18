@@ -1,5 +1,6 @@
-import { Navigation } from '@/components/organisms';
+// import { FormNavigation } from '@/components/organisms';
 import { Outlet } from "react-router-dom";
+import { Footer } from "@/components/molecules/Footer/Footer.tsx";
 
 interface ILayout {
   testid: string;
@@ -8,9 +9,9 @@ interface ILayout {
 export const Layout: React.FC<ILayout> = ({ testid }: ILayout) => {
   return (
     <div data-testid={testid}>
-      <Navigation testid="main-menu" />
+      {/*<FormNavigation testid="main-menu" />*/}
       <Outlet />
-      Footer
+      <Footer testid={'footer'} />
     </div>
   )
 }

@@ -11,13 +11,13 @@ export const router = createBrowserRouter([
     element: <Layout testid={'layout'} />,
     children: [
       {
-        path: Slugs.DASHBOARD,
+        path: Slugs.FORM,
         element: <FormPage />
       }
     ]
   },
   {
     path: Slugs.NOT_FOUND,
-    element: <Navigate replace to={Slugs.DASHBOARD} />
+    element: <Navigate replace to={Slugs.FORM} />
   }
 ]);

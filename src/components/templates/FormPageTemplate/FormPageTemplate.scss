@@ -1,0 +1,13 @@
+.form-card {
+  background-color: $clr-form-bg;
+  width: 90vw;
+  margin: auto;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+@media (min-width: 1199px) {
+  .form-card {
+    width: 60vw;
+  }
+}

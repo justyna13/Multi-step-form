@@ -1,17 +1,15 @@
-// Varaibles
-$clr-bg: #eef5ff;
-$clr-form-bg: #ffffff;
-
-$clr-button-confirm: #483eff;
-$clr-button-next: #03295a;
-$clr-button-prev: #fff;
-
-$clr-text-step: #fff;
-$clr-step-active: #badef8;
-
-$clr-text-header: #0a3264;
-$clr-text: #a1a2a7;
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $clr-bg;
 }
