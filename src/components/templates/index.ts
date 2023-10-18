@@ -1,1 +1,1 @@
-export { HomePageTemplate } from '@/components/templates/HomePageTemplate/HomePageTemplate.tsx';
+export { FormPageTemplate } from '@/components/templates/FormPageTemplate/FormPageTemplate.tsx';

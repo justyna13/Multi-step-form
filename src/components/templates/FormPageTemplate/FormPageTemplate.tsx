@@ -2,7 +2,7 @@ interface IDashboardPageTemplate {
   testid: string;
 }
 
-export const HomePageTemplate: React.FC<IDashboardPageTemplate> = ({
+export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
   testid
 }: IDashboardPageTemplate) => {
   return (

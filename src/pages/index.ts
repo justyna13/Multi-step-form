@@ -1,1 +1,1 @@
-export { HomePage } from '@/pages/HomePage/HomePage.tsx';
+export { FormPage } from '@/pages/FormPage/FormPage.tsx';

@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import { Slugs } from '@/constants';
 import {
-  HomePage,
+  FormPage,
 } from '@/pages';
 import { Layout } from "@/pages/Layout.tsx";
 
@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: Slugs.DASHBOARD,
-        element: <HomePage />
+        element: <FormPage />
       }
     ]
   },
