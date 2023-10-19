@@ -1,11 +1,32 @@
 import { Header } from "@/components/atoms/Header/Header.tsx";
+import { Button } from "@/components/atoms/Button/Button.tsx";
+import { useAppState } from "@/store/StoreProvider/StoreProvider.tsx";
+import { useFormContext } from "react-hook-form";
 
 interface IFormStepThird {
   testid: string;
   className?: string;
+  onBtnNextClicked: () => void;
+  onBtnPrevClicked: () => void;
 }
 
-export const FormStepThird: React.FC<IFormStepThird> = ({testid}: IFormStepThird) => {
+export const FormStepThird: React.FC<IFormStepThird> = ({
+  testid,
+  onBtnPrevClicked,
+  onBtnNextClicked
+}: IFormStepThird) => {
+  const [state, setState]: any = useAppState();
+  const {
+    handleSubmit
+  } = useFormContext();
+
+
+  const saveData = (data: any) => {
+    setState({...state, ...data})
+    // console.log(data)
+    onBtnNextClicked();
+  }
+
   return (
     <div data-testid={testid}>
       <Header
@@ -16,7 +37,20 @@ export const FormStepThird: React.FC<IFormStepThird> = ({testid}: IFormStepThird
 
       Online service Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save +$2/mo Customizable Profile Custom theme on your profile +$2/mo
 
-      Go Back Next Step
+      <div className="step-bottom">
+        <Button
+          type="button"
+          className={`btn-next`}
+          buttonText="Go Back"
+          onClick={onBtnPrevClicked}
+        />
+        <Button
+          type="button"
+          className={`btn-next`}
+          buttonText="Next Step"
+          onClick={handleSubmit(saveData)}
+        />
+      </div>
     </div>
   )
 }

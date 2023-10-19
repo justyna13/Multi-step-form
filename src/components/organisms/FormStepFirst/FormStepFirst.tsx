@@ -8,9 +8,13 @@ import "@/components/organisms/FormStepFirst/FormStepFirst.scss";
 interface IFormStepFirst {
   testid: string;
   className?: string;
+  onBtnNextClicked: () => void;
 }
 
-export const FormStepFirst: React.FC<IFormStepFirst> = ({testid}: IFormStepFirst) => {
+export const FormStepFirst: React.FC<IFormStepFirst> = ({
+  testid,
+  onBtnNextClicked
+}: IFormStepFirst) => {
   const [state, setState]: any = useAppState();
   const {
     handleSubmit
@@ -24,7 +28,8 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({testid}: IFormStepFirst
 
   const saveData = (data: any) => {
     setState({...state, ...data})
-    console.log(data)
+    // console.log(data)
+    onBtnNextClicked();
   }
 
   return (

@@ -10,9 +10,9 @@ interface IDashboardPageTemplate {
 }
 
 export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
-  testid
-}: IDashboardPageTemplate) => {
-  const [activeStep] = useState('1');
+                                                                     testid
+                                                                   }: IDashboardPageTemplate) => {
+  const [activeStep, setActiveStep] = useState('1');
 
   const methods = useForm({
     defaultValues: {name: "", email: "", phone: ""}
@@ -22,13 +22,27 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
   const renderActiveStep = (index: string) => {
     switch (index) {
       case '1':
-        return <FormStepFirst testid={'form-step-first'} />
+        return <FormStepFirst
+          testid={'form-step-first'}
+          onBtnNextClicked={() => setActiveStep('2')}
+        />
       case '2':
-        return <FormStepSecond testid={'form-step-second'} />
+        return <FormStepSecond
+          testid={'form-step-second'}
+          onBtnPrevClicked={() => setActiveStep('1')}
+          onBtnNextClicked={() => setActiveStep('3')}
+        />
       case '3':
-        return <FormStepThird testid={'form-step-third'} />
+        return <FormStepThird
+          testid={'form-step-third'}
+          onBtnPrevClicked={() => setActiveStep('2')}
+          onBtnNextClicked={() => setActiveStep('4')}
+        />
       case '4':
-        return <FormStepFourth testid={'form-step-fourth'} />
+        return <FormStepFourth
+          testid={'form-step-fourth'}
+          onBtnPrevClicked={() => setActiveStep('3')}
+        />
     }
   }
 
@@ -38,14 +52,14 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
   return (
     <div className="form-card" data-testid={testid}>
       <div className="form-wrapper">
-        <FormNavigation testid={'form-navigation'} />
+        <FormNavigation testid={'form-navigation'}/>
         <div className="form-inner">
           <FormProvider {...methods}>
             <form className="multipstep-form" onSubmit={methods.handleSubmit(submitData)} noValidate>
-              { renderActiveStep(activeStep)}
+              {renderActiveStep(activeStep)}
             </form>
           </FormProvider>
-          <DevTool control={methods.control} />
+          <DevTool control={methods.control}/>
         </div>
       </div>
     </div>
