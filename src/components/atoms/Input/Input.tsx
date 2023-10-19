@@ -1,5 +1,6 @@
 import React from "react";
 import { RegisterOptions, UseFormRegisterReturn } from "react-hook-form";
+import "@/components/atoms/Input/Input.scss";
 
 interface IInput {
   name: string;

@@ -1,5 +1,6 @@
 import { Input } from "@/components/atoms";
 import { RegisterOptions, useFormContext } from "react-hook-form";
+import "@/components/molecules/FormInput/FormInput.scss";
 
 type InputProps = React.ComponentProps<typeof Input>;
 
@@ -23,12 +24,12 @@ export const FormInput: React.FC<IFormInput> = ({
 
   return (
     <div className="form-control">
-      <label className="form-label">
-        {label}
+      <div className="label-wr">
+        <label className="form-label">{label}</label>
         { isError ? (
-          <span>{isError.message as string}</span>
+          <span className="error-msg">{isError.message as string}</span>
         ): null}
-      </label>
+      </div>
       <Input
         name={name}
         type={type}

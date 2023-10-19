@@ -10,8 +10,12 @@
   display: flex;
 }
 
+.form-inner {
+  padding: 0 64px;
+}
+
 @media (min-width: 1199px) {
   .form-card {
-    width: 60vw;
+    width: 660px;
   }
 }

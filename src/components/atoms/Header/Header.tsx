@@ -1,3 +1,5 @@
+import "@/components/atoms/Header/Header.scss";
+
 interface IHeader {
   testid: string;
   title: string;
@@ -9,7 +11,7 @@ export const Header: React.FC<IHeader> = ({
   description
 }: IHeader) => {
   return (
-    <div data-testuid={testid}>
+    <div className="header" data-testuid={testid}>
       <h2>{title}</h2>
       <p>{description}</p>
     </div>

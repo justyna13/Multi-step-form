@@ -1,9 +1,6 @@
 $clr-bg: #eef5ff;
 $clr-form-bg: #ffffff;
 
-$clr-button-confirm: #483eff;
-$clr-button-next: #03295a;
-$clr-button-prev: #fff;
 
 $clr-text-step: #fff;
 $clr-text-step-active: #333;
@@ -11,5 +8,18 @@ $clr-step-active: #badef8;
 
 $clr-text-header: #0a3264;
 $clr-text: #a1a2a7;
+
+$clr-input-border: #e2e2e8;
+$clr-input-border-focus: #343480;
+$clr-input-text: #0a3264;
+
+$clr-red: #e30137;
+
+//Buttons
+$clr-button-confirm: #483eff;
+$clr-button-next: #03295a;
+$clr-button-next-focus: rgba(3, 41, 90, .9);
+$clr-button-prev: #fff;
+
 
 $ff-main: 'Ubuntu', sans-serif;

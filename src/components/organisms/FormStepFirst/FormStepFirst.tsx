@@ -1,31 +1,32 @@
 import { Header } from "@/components/atoms/Header/Header.tsx";
 import { FormInput } from "@/components/molecules";
-import { FormProvider, useForm } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { Button } from "@/components/atoms/Button/Button.tsx";
 import { useAppState } from "@/store/StoreProvider/StoreProvider.tsx";
-import { DevTool } from "@hookform/devtools";
+import "@/components/organisms/FormStepFirst/FormStepFirst.scss";
 
 interface IFormStepFirst {
   testid: string;
   className?: string;
 }
-let renderCount = 0;
 
 export const FormStepFirst: React.FC<IFormStepFirst> = ({testid}: IFormStepFirst) => {
   const [state, setState]: any = useAppState();
-  const methods = useForm<FormValues>({ defaultValues: state});
+  const {
+    handleSubmit
+  } = useFormContext();
 
-  type FormValues = {
-    name: string;
-    email: string;
-    phone: string;
-  }
+  // type FormValues = {
+  //   name: string;
+  //   email: string;
+  //   phone: string;
+  // }
 
-  const saveData = (data: FormValues) => {
+  const saveData = (data: any) => {
     setState({...state, ...data})
-    console.log(data, methods.formState.errors)
+    console.log(data)
   }
-  renderCount++
+
   return (
     <div className="form-step--first" data-testid={testid}>
       <Header
@@ -33,8 +34,8 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({testid}: IFormStepFirst
         title={'Personal info'}
         description={'Please provide your name, email address, and phone number.'}
       />
-      <p>{renderCount/2}</p>
-      <FormProvider {...methods}>
+
+      <div>
         <FormInput
           label="Name"
           name="name"
@@ -70,14 +71,16 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({testid}: IFormStepFirst
           }}
           placeholder="e.g. 123-456-789"
         />
-        <Button
-          type="submit"
-          className={`btn-next`}
-          buttonText="Next Step"
-          onClick={methods.handleSubmit(saveData)}
-        />
-      </FormProvider>
-      <DevTool control={methods.control} />
+        <div className="step-bottom">
+          <Button
+            type="button"
+            className={`btn-next`}
+            buttonText="Next Step"
+            onClick={handleSubmit(saveData)}
+          />
+        </div>
+      </div>
+
     </div>
   )
 }

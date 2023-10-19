@@ -1,0 +1,28 @@
+.main-btn {
+  background-color: $clr-button-next;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  height: 36px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 8px 26px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:hover,
+  &:focus {
+    background-color: $clr-button-next-focus;
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "@/components/atoms/Button/Button.scss";
 
 interface IButton {
   buttonText: string;
@@ -16,7 +17,7 @@ export const Button: React.FC<IButton> = ({
   return (
     <button
       onClick={onClick}
-      className={className}
+      className={`main-btn ${className}`}
       type={type}>
       {buttonText}
     </button>
