@@ -28,9 +28,9 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
     <div className="form-card" data-testid={testid}>
       <div className="form-wrapper">
         <FormNavigation testid={'form-navigation'} />
-        <form className="multipstep-form">
+        <div className="multipstep-form">
           { renderActiveStep(activeStep)}
-        </form>
+        </div>
       </div>
     </div>
   );

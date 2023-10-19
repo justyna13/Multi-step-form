@@ -6,6 +6,7 @@ interface IInput {
   register?: (name: string, options?: RegisterOptions) => UseFormRegisterReturn;
   type?: React.HTMLProps<HTMLInputElement>['type'];
   placeholder?: React.HTMLProps<HTMLInputElement>['placeholder'];
+  validationSchema?: RegisterOptions | undefined;
 }
 
 export const Input: React.FC<IInput> = React.memo(
@@ -13,9 +14,10 @@ export const Input: React.FC<IInput> = React.memo(
      register,
      name,
      type,
-     placeholder
+     placeholder,
+     validationSchema,
    }: IInput) => {
-    const isFormRegistered = register ? register(name) : undefined;
+    const isFormRegistered = register ? register(name, validationSchema) : undefined;
 
     return (
       <input
