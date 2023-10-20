@@ -3,6 +3,6 @@ const withBasePath = (path: string) =>
 
 export const Slugs = {
   // Main pages
-  FORM: withBasePath('/form'),
+  FORM: withBasePath('/multiStepForm'),
   NOT_FOUND: '*'
 };

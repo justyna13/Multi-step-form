@@ -34,7 +34,7 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
   return (
     <div className="form-step--first" data-testid={testid}>
       <Header
-        testid={'form-step-first-ttl'}
+        testid={'multiStepForm-step-first-ttl'}
         title={'Personal info'}
         description={'Please provide your name, email address, and phone number.'}
       />

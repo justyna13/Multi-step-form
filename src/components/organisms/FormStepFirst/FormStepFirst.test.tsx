@@ -7,18 +7,18 @@ describe("FormStepFirst", () => {
   it("should render firstStep", () => {
     render(
       <FormStepFirst
-        testid={'form-step-first'} />
+        testid={'multiStepForm-step-first'} />
     );
-    const formFirstStep = screen.getByTestId('form-step-first');
+    const formFirstStep = screen.getByTestId('multiStepForm-step-first');
     expect(formFirstStep).toBeInTheDocument();
   })
 
   it("should be visible on render", () => {
     render(
       <FormStepFirst
-        testid={'form-step-first'} />
+        testid={'multiStepForm-step-first'} />
     );
-    const formFirstStep = screen.getByTestId('form-step-first');
+    const formFirstStep = screen.getByTestId('multiStepForm-step-first');
     expect(formFirstStep).not.toHaveClass("hidden");
   })
 })

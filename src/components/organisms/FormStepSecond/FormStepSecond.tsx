@@ -30,7 +30,7 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
   return (
     <div data-testid={testid}>
       <Header
-        testid={'form-step-second-ttl'}
+        testid={'multiStepForm-step-second-ttl'}
         title={'Select your plan'}
         description={'You have the option of monthly or yearly billing.'}
       />

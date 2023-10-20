@@ -6,10 +6,10 @@ describe("FormStepSecond", () => {
   it("should render secondStep", () => {
     render(
       <FormStepSecond
-        testid={'form-step-second'}
+        testid={'multiStepForm-step-second'}
       />
     );
-    const formSecondStep = screen.getByTestId('form-step-second');
+    const formSecondStep = screen.getByTestId('multiStepForm-step-second');
     expect(formSecondStep).toBeInTheDocument();
   })
 })

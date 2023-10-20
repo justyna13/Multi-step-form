@@ -19,24 +19,24 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
     switch (index) {
       case '1':
         return <FormStepFirst
-          testid={'form-step-first'}
+          testid={'multiStepForm-step-first'}
           onBtnNextClicked={() => setActiveStep('2')}
         />
       case '2':
         return <FormStepSecond
-          testid={'form-step-second'}
+          testid={'multiStepForm-step-second'}
           onBtnPrevClicked={() => setActiveStep('1')}
           onBtnNextClicked={() => setActiveStep('3')}
         />
       case '3':
         return <FormStepThird
-          testid={'form-step-third'}
+          testid={'multiStepForm-step-third'}
           onBtnPrevClicked={() => setActiveStep('2')}
           onBtnNextClicked={() => setActiveStep('4')}
         />
       case '4':
         return <FormStepFourth
-          testid={'form-step-fourth'}
+          testid={'multiStepForm-step-fourth'}
           onBtnPrevClicked={() => setActiveStep('3')}
         />
     }
@@ -48,7 +48,7 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
   return (
     <div className="form-card" data-testid={testid}>
       <div className="form-wrapper">
-        <FormNavigation testid={'form-navigation'}/>
+        <FormNavigation testid={'multiStepForm-navigation'}/>
         <div className="form-inner">
           <FormProvider {...methods}>
             <form className="multipstep-form" onSubmit={methods.handleSubmit(submitData)} noValidate>

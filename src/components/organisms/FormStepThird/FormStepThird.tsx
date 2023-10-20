@@ -31,7 +31,7 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
   return (
     <div data-testid={testid}>
       <Header
-        testid={'form-step-third-ttl'}
+        testid={'multiStepForm-step-third-ttl'}
         title={'Pick add-ons'}
         description={'Add-ons help enhance your gaming experience. '}
       />
