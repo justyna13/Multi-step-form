@@ -7,6 +7,7 @@ describe("FormStepFirst", () => {
   it("should render firstStep", () => {
     render(
       <FormStepFirst
+        onBtnNextClicked={() => {}}
         testid={'multiStepForm-step-first'} />
     );
     const formFirstStep = screen.getByTestId('multiStepForm-step-first');
@@ -16,6 +17,7 @@ describe("FormStepFirst", () => {
   it("should be visible on render", () => {
     render(
       <FormStepFirst
+        onBtnNextClicked={() => {}}
         testid={'multiStepForm-step-first'} />
     );
     const formFirstStep = screen.getByTestId('multiStepForm-step-first');

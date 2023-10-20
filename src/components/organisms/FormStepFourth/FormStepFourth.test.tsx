@@ -6,7 +6,9 @@ describe("FormStepFourth", () => {
 
   it("should render fourthStep", () => {
     render(
-      <FormStepFourth testid={'multiStepForm-step-fourth'} />
+      <FormStepFourth
+        onBtnPrevClicked={() => {}}
+        testid={'multiStepForm-step-fourth'} />
     );
     const formFourthStep = screen.getByTestId('multiStepForm-step-fourth');
     expect(formFourthStep).toBeInTheDocument();

@@ -6,6 +6,8 @@ describe("FormStepSecond", () => {
   it("should render secondStep", () => {
     render(
       <FormStepSecond
+        onBtnNextClicked={() => {}}
+        onBtnPrevClicked={() => {}}
         testid={'multiStepForm-step-second'}
       />
     );
