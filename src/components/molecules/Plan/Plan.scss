@@ -1,0 +1,31 @@
+.single-plan {
+  border-radius: 8px;
+  border: 1px solid $clr-input-border;
+  background-color: #fff;
+  padding: 24px 16px;
+  flex: 1;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  &:hover {
+    border-color: $clr-button-next-focus;
+  }
+  &.selected {
+    background-color: #f8f9fe;
+    border-color: $clr-button-next-focus;
+  }
+  &__ttl {
+    color: $clr-text-header;
+    font-weight: bold;
+    font-size: .95rem;
+    margin-bottom: 4px;
+  }
+  &__desc {
+    color: $clr-text;
+    font-weight: lighter;
+    font-size: .9rem;
+    margin: 0;
+  }
+}

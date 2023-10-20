@@ -15,6 +15,7 @@ export interface IPayloadAction extends IAction {
       name: string;
       email: string;
       phone: string;
+      selectedPlan: any;
     }
   }
 }
