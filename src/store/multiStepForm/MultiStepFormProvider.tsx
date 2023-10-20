@@ -2,15 +2,19 @@ import React from 'react';
 import { MultiStepFormContext } from '@/store/multiStepForm/MultiStepFormContext.ts';
 import { IMultiStepFormState } from "@/store/multiStepForm/MultiStepFormConextTypes.ts";
 import { multiStepFormReducer } from "@/store/multiStepForm/MultiStepFormReducer.tsx";
+import { FORM_STEPS } from "@/constants";
 
 interface IFormProvider {
   children: React.ReactNode;
 }
 
 const formInitialState: IMultiStepFormState = {
-  name: "",
-  email: "",
-  phone: "",
+  activeStep: FORM_STEPS.INFO,
+  formData: {
+    name: "",
+    email: "",
+    phone: "",
+  }
 }
 
 export const MultiStepFormProvider: React.FC<IFormProvider> = ({

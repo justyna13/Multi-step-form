@@ -2,8 +2,8 @@ import { Header } from "@/components/atoms/Header/Header.tsx";
 import { FormInput } from "@/components/molecules";
 import { useFormContext } from "react-hook-form";
 import { Button } from "@/components/atoms/Button/Button.tsx";
-import { useAppState } from "@/store/StoreProvider/StoreProvider.tsx";
 import "@/components/organisms/FormStepFirst/FormStepFirst.scss";
+import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
 
 interface IFormStepFirst {
   testid: string;
@@ -15,7 +15,7 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
   testid,
   onBtnNextClicked
 }: IFormStepFirst) => {
-  const [state, setState]: any = useAppState();
+  const {dispatch } = useMultiStepFormContext();
 
   const {
     getValues,
@@ -26,8 +26,7 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
     const isStepValid = await trigger();
     if (!isStepValid) return
     const stepFields = getValues();
-    setState({...state, ...stepFields})
-    console.log(stepFields)
+    dispatch({type: MultiStepFormActionType.UPDATE_FORM_DATA, payload: {formData: stepFields}});
     onBtnNextClicked();
   }
 

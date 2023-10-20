@@ -1,9 +1,10 @@
 import "@/components/templates/FormPageTemplate/FormPageTemplate.scss";
 import { FormStepFirst, FormStepFourth, FormStepSecond, FormStepThird } from "@/components/organisms";
-import { useState } from "react";
 import { FormNavigation } from "@/components/molecules";
 import { FormProvider, useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
+import { FORM_STEPS } from "@/constants";
+import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
 
 interface IDashboardPageTemplate {
   testid: string;
@@ -12,32 +13,36 @@ interface IDashboardPageTemplate {
 export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
   testid
 }: IDashboardPageTemplate) => {
-  const [activeStep, setActiveStep] = useState('1');
+  const { state, dispatch } = useMultiStepFormContext();
   const methods = useForm({mode: "onChange"});
 
-  const renderActiveStep = (index: string) => {
+  const setActiveStep = (step: FORM_STEPS) => {
+    dispatch({type: MultiStepFormActionType.SET_ACTIVE_STEP, payload: { activeStep: step }})
+  }
+
+  const renderActiveStep = (index: FORM_STEPS) => {
     switch (index) {
-      case '1':
+      case (FORM_STEPS.INFO):
         return <FormStepFirst
           testid={'multiStepForm-step-first'}
-          onBtnNextClicked={() => setActiveStep('2')}
+          onBtnNextClicked={() => setActiveStep(FORM_STEPS.PLAN)}
         />
-      case '2':
+      case (FORM_STEPS.PLAN):
         return <FormStepSecond
           testid={'multiStepForm-step-second'}
-          onBtnPrevClicked={() => setActiveStep('1')}
-          onBtnNextClicked={() => setActiveStep('3')}
+          onBtnPrevClicked={() => setActiveStep(FORM_STEPS.INFO)}
+          onBtnNextClicked={() => setActiveStep(FORM_STEPS.ADDITIONAL)}
         />
-      case '3':
+      case (FORM_STEPS.ADDITIONAL):
         return <FormStepThird
           testid={'multiStepForm-step-third'}
-          onBtnPrevClicked={() => setActiveStep('2')}
-          onBtnNextClicked={() => setActiveStep('4')}
+          onBtnPrevClicked={() => setActiveStep(FORM_STEPS.PLAN)}
+          onBtnNextClicked={() => setActiveStep(FORM_STEPS.SUMMARY)}
         />
-      case '4':
+      case (FORM_STEPS.SUMMARY):
         return <FormStepFourth
           testid={'multiStepForm-step-fourth'}
-          onBtnPrevClicked={() => setActiveStep('3')}
+          onBtnPrevClicked={() => setActiveStep(FORM_STEPS.ADDITIONAL)}
         />
     }
   }
@@ -52,7 +57,7 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
         <div className="form-inner">
           <FormProvider {...methods}>
             <form className="multipstep-form" onSubmit={methods.handleSubmit(submitData)} noValidate>
-              {renderActiveStep(activeStep)}
+              {renderActiveStep(state.activeStep)}
             </form>
           </FormProvider>
           <DevTool control={methods.control}/>

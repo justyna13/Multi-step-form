@@ -6,3 +6,10 @@ export const Slugs = {
   FORM: withBasePath('/multiStepForm'),
   NOT_FOUND: '*'
 };
+
+export enum FORM_STEPS {
+  INFO = "INFO",
+  PLAN = "PLAN",
+  ADDITIONAL = "ADDITIONAL ADD-ONS",
+  SUMMARY = "SUMMARY"
+}

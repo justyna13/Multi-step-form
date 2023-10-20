@@ -1,5 +1,10 @@
+import { FORM_STEPS } from "@/constants";
+
 export interface IMultiStepFormState {
-  name: string;
-  email: string;
-  phone: string;
+  activeStep?: FORM_STEPS;
+  formData?: {
+    name: string;
+    email: string;
+    phone: string;
+  }
 }
