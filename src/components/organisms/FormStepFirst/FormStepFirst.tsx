@@ -17,7 +17,7 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
 }: IFormStepFirst) => {
   const [state, setState]: any = useAppState();
   const {
-    handleSubmit
+    getValues
   } = useFormContext();
 
   // type FormValues = {
@@ -26,9 +26,10 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
   //   phone: string;
   // }
 
-  const saveData = (data: any) => {
-    setState({...state, ...data})
-    // console.log(data)
+  const saveData = () => {
+    const stepFields = getValues();
+    setState({...state, ...stepFields})
+    console.log(stepFields)
     onBtnNextClicked();
   }
 
@@ -81,11 +82,10 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
             type="button"
             className={`btn-next`}
             buttonText="Next Step"
-            onClick={handleSubmit(saveData)}
+            onClick={saveData}
           />
         </div>
       </div>
-
     </div>
   )
 }

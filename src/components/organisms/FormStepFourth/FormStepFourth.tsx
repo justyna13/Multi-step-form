@@ -1,7 +1,5 @@
 import { Header } from "@/components/atoms/Header/Header.tsx";
 import { Button } from "@/components/atoms/Button/Button.tsx";
-import { useFormContext } from "react-hook-form";
-import { useAppState } from "@/store/StoreProvider/StoreProvider.tsx";
 
 interface IFormStepFourth {
   testid: string;
@@ -13,17 +11,6 @@ export const FormStepFourth: React.FC<IFormStepFourth> = ({
   testid,
   onBtnPrevClicked
 }: IFormStepFourth) => {
-  const [state, setState]: any = useAppState();
-  const {
-    handleSubmit
-  } = useFormContext();
-
-
-  const submitForm = (data: any) => {
-    setState({...state, ...data})
-    // console.log(data)
-  }
-
   return (
     <div data-testid={testid}>
       <Header
@@ -43,10 +30,9 @@ export const FormStepFourth: React.FC<IFormStepFourth> = ({
           onClick={onBtnPrevClicked}
         />
         <Button
-          type="button"
+          type="submit"
           className={`btn-next`}
           buttonText="Confirm"
-          onClick={handleSubmit(submitForm)}
         />
       </div>
     </div>

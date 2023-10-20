@@ -17,13 +17,14 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
 }: IFormStepThird) => {
   const [state, setState]: any = useAppState();
   const {
-    handleSubmit
+    getValues
   } = useFormContext();
 
 
-  const saveData = (data: any) => {
-    setState({...state, ...data})
-    // console.log(data)
+  const saveData = () => {
+    const stepFields = getValues();
+    setState({...state, ...stepFields})
+    console.log(stepFields)
     onBtnNextClicked();
   }
 
@@ -48,7 +49,7 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
           type="button"
           className={`btn-next`}
           buttonText="Next Step"
-          onClick={handleSubmit(saveData)}
+          onClick={saveData}
         />
       </div>
     </div>
