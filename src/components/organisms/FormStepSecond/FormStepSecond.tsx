@@ -1,7 +1,5 @@
 import { Header } from "@/components/atoms/Header/Header.tsx";
 import { Button } from "@/components/atoms/Button/Button.tsx";
-import { useAppState } from "@/store/StoreProvider/StoreProvider.tsx";
-import { useFormContext } from "react-hook-form";
 
 interface IFormStepSecond {
   testid: string;
@@ -15,15 +13,13 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
   onBtnNextClicked,
   onBtnPrevClicked
 }: IFormStepSecond) => {
-  const [state, setState]: any = useAppState();
-  const {
-    getValues
-  } = useFormContext();
+  // const {
+  //   getValues
+  // } = useFormContext();
 
   const saveData = () => {
-    const stepFields = getValues();
-    setState({...state, ...stepFields})
-    console.log(stepFields)
+    // const stepFields = getValues();
+    // console.log(stepFields)
     onBtnNextClicked();
   }
 

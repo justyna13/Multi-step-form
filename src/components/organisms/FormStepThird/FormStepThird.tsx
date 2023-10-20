@@ -1,7 +1,7 @@
 import { Header } from "@/components/atoms/Header/Header.tsx";
 import { Button } from "@/components/atoms/Button/Button.tsx";
-import { useAppState } from "@/store/StoreProvider/StoreProvider.tsx";
 import { useFormContext } from "react-hook-form";
+import { useMultiStepFormContext } from "@/store";
 
 interface IFormStepThird {
   testid: string;
@@ -15,15 +15,14 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
   onBtnPrevClicked,
   onBtnNextClicked
 }: IFormStepThird) => {
-  const [state, setState]: any = useAppState();
   const {
     getValues
   } = useFormContext();
-
+  const {state, dispatch} = useMultiStepFormContext();
 
   const saveData = () => {
     const stepFields = getValues();
-    setState({...state, ...stepFields})
+    console.log(state, dispatch)
     console.log(stepFields)
     onBtnNextClicked();
   }
