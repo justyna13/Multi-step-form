@@ -16,14 +16,15 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
   onBtnNextClicked
 }: IFormStepFirst) => {
   const [state, setState]: any = useAppState();
-  console.log(state)
+
   const {
     getValues,
-    formState: {errors},
+    trigger
   } = useFormContext();
 
-  const saveData = () => {
-    console.log(errors)
+  const saveData = async () => {
+    const isStepValid = await trigger();
+    if (!isStepValid) return
     const stepFields = getValues();
     setState({...state, ...stepFields})
     console.log(stepFields)

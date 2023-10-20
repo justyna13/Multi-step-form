@@ -13,7 +13,7 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
   testid
 }: IDashboardPageTemplate) => {
   const [activeStep, setActiveStep] = useState('1');
-  const methods = useForm({});
+  const methods = useForm({mode: "onChange"});
 
   const renderActiveStep = (index: string) => {
     switch (index) {
