@@ -16,17 +16,14 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
   onBtnNextClicked
 }: IFormStepFirst) => {
   const [state, setState]: any = useAppState();
+  console.log(state)
   const {
-    getValues
+    getValues,
+    formState: {errors},
   } = useFormContext();
 
-  // type FormValues = {
-  //   name: string;
-  //   email: string;
-  //   phone: string;
-  // }
-
   const saveData = () => {
+    console.log(errors)
     const stepFields = getValues();
     setState({...state, ...stepFields})
     console.log(stepFields)
@@ -47,7 +44,7 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
           name="name"
           type="text"
           validationSchema={{
-            required: "This field is required"
+            required: "This field is required",
           }}
           placeholder="e.g. Stephen King Email"
         />

@@ -10,14 +10,10 @@ interface IDashboardPageTemplate {
 }
 
 export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
-                                                                     testid
-                                                                   }: IDashboardPageTemplate) => {
+  testid
+}: IDashboardPageTemplate) => {
   const [activeStep, setActiveStep] = useState('1');
-
-  const methods = useForm({
-    defaultValues: {name: "", email: "", phone: ""}
-  });
-
+  const methods = useForm({});
 
   const renderActiveStep = (index: string) => {
     switch (index) {

@@ -1,12 +1,14 @@
 import { RouterProvider } from 'react-router-dom';
 import { router } from '@/router';
 import '@/assets/styles/global.scss';
-import { AppProvider } from "./store";
+import { AppProvider, FormProvider } from "./store";
 
 export default function App() {
   return (
     <AppProvider>
-      <RouterProvider router={router} />
+      <FormProvider>
+        <RouterProvider router={router} />
+      </FormProvider>
     </AppProvider>
   );
 }
