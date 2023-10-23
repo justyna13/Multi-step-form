@@ -42,3 +42,14 @@
     background-color: #f8f9fe;
   }
 }
+
+.btn-confirm {
+  color: #fff;
+  font-weight: bold;
+  background-color: rgb(0, 120, 0);
+
+  &:focus,
+  &:hover {
+    background-color: rgba(0, 100, 0, .8);
+  }
+}
