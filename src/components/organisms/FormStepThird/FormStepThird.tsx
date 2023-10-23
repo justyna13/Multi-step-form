@@ -2,12 +2,21 @@ import { Header } from "@/components/atoms/Header/Header.tsx";
 import { Button } from "@/components/atoms/Button/Button.tsx";
 import { useFormContext } from "react-hook-form";
 import { useMultiStepFormContext } from "@/store";
+import { AddOn } from "@/components/molecules/AddOn/AddOn.tsx";
+import "@/components/organisms/FormStepThird/FormStepThird.scss";
 
 interface IFormStepThird {
   testid: string;
   className?: string;
   onBtnNextClicked: () => void;
   onBtnPrevClicked: () => void;
+}
+
+export type SingleAddOn = {
+  id: number;
+  name: string;
+  pricePerMonth: number;
+  description: string;
 }
 
 export const FormStepThird: React.FC<IFormStepThird> = ({
@@ -27,20 +36,43 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
     onBtnNextClicked();
   }
 
+  const availableAddOns: Array<SingleAddOn> = [
+    {
+      id: 1,
+      name: "Online service",
+      description: "Access to multiplayer games",
+      pricePerMonth: 1
+    },
+    {
+      id: 2,
+      name: "Larger storage",
+      description: "Extra 1TB of cloud save",
+      pricePerMonth: 2,
+    },
+    {
+      id: 3,
+      name: "Customizable Profile",
+      description: "Custom theme on your profile",
+      pricePerMonth: 2,
+    }
+  ]
+
   return (
-    <div data-testid={testid}>
+    <div className="form-step--third" data-testid={testid}>
       <Header
         testid={'multiStepForm-step-third-ttl'}
         title={'Pick add-ons'}
         description={'Add-ons help enhance your gaming experience. '}
       />
 
-      Online service Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save +$2/mo Customizable Profile Custom theme on your profile +$2/mo
+      {availableAddOns.map(item => (
+        <AddOn testid={`add-on-${item.id}`} item={item} key={item.id} />
+      ))}
 
       <div className="step-bottom">
         <Button
           type="button"
-          className={`btn-next`}
+          className={`btn-prev`}
           buttonText="Go Back"
           onClick={onBtnPrevClicked}
         />

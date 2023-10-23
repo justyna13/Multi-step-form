@@ -1,12 +1,13 @@
 import React from "react";
 import { SinglePlanType } from "@/components/organisms/FormStepSecond/FormStepSecond.tsx";
 import "@/components/molecules/Plan/Plan.scss";
+import { AVAILABLE_PLANS } from "@/constants";
 
 interface IPlan {
   item: SinglePlanType;
   testid: string;
   isSelected: boolean;
-  onPlanSelected: (id: number) => void;
+  onPlanSelected: (id: AVAILABLE_PLANS) => void;
 }
 
 export const Plan:React.FC<IPlan> = ({

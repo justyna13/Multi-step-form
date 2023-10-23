@@ -1,0 +1,26 @@
+.add-on {
+  border-radius: 8px;
+  border: 1px solid $clr-input-border;
+  background-color: #fff;
+  padding: 4px 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $clr-button-next-focus;
+  }
+  &.selected {
+    background-color: #f8f9fe;
+    border-color: $clr-button-next-focus;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

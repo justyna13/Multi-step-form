@@ -61,8 +61,7 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
     onBtnNextClicked();
   }
 
-  const updateSelectedPlan = (planId: number) => {
-    console.log(planId)
+  const updateSelectedPlan = (planId: AVAILABLE_PLANS) => {
     dispatch({type: MultiStepFormActionType.UPDATE_STEP_PLAN, payload: {selectedPlan: planId}})
   }
 
