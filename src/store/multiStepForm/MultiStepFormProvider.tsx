@@ -10,12 +10,10 @@ interface IFormProvider {
 
 const formInitialState: IMultiStepFormState = {
   activeStep: FORM_STEPS.PLAN,
-  formData: {
-    name: "",
-    email: "",
-    phone: "",
-    selectedPlan: null,
-  }
+  name: "",
+  email: "",
+  phone: "",
+  selectedPlan: null,
 }
 
 export const MultiStepFormProvider: React.FC<IFormProvider> = ({

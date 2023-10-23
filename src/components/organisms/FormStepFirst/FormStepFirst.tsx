@@ -26,7 +26,7 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
     const isStepValid = await trigger();
     if (!isStepValid) return
     const stepFields = getValues();
-    dispatch({type: MultiStepFormActionType.UPDATE_FORM_DATA, payload: {formData: stepFields}});
+    dispatch({type: MultiStepFormActionType.UPDATE_STEP_INFO, payload: stepFields});
     onBtnNextClicked();
   }
 

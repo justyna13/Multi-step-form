@@ -13,3 +13,9 @@ export enum FORM_STEPS {
   ADDITIONAL = "ADDITIONAL ADD-ONS",
   SUMMARY = "SUMMARY"
 }
+
+export enum AVAILABLE_PLANS {
+  ARCADE = "ARCADE",
+  ADVANCED = "ADVANCED",
+  PRO = "PRO"
+}

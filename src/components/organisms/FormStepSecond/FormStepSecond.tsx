@@ -7,6 +7,7 @@ import { ReactComponent as ProPlanIcon } from "@/assets/icons/icon-pro.svg";
 import { ReactElement } from "react";
 import "@/components/organisms/FormStepSecond/FormStepSecond.scss";
 import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
+import { AVAILABLE_PLANS } from "@/constants";
 
 interface IFormStepSecond {
   testid: string;
@@ -16,7 +17,7 @@ interface IFormStepSecond {
 }
 
 export type SinglePlanType = {
-  id: number;
+  id: AVAILABLE_PLANS;
   name: string;
   pricePerMonth: number;
   icon: ReactElement;
@@ -35,19 +36,19 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
 
   const availablePlans: Array<SinglePlanType> = [
     {
-      id: 1,
+      id: AVAILABLE_PLANS.ARCADE,
       name: "Arcade",
       pricePerMonth: 9,
       icon: <ArcadePlanIcon />,
     },
     {
-      id: 2,
+      id: AVAILABLE_PLANS.ADVANCED,
       name: "Advanced",
       pricePerMonth: 12,
       icon: <AdvancedPlanIcon />,
     },
     {
-      id: 3,
+      id: AVAILABLE_PLANS.PRO,
       name: "Pro",
       pricePerMonth: 15,
       icon: <ProPlanIcon />,
@@ -62,7 +63,7 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
 
   const updateSelectedPlan = (planId: number) => {
     console.log(planId)
-    dispatch({type: MultiStepFormActionType.UPDATE_FORM_DATA, payload: {formData: {...state.formData, selectedPlan: planId}}})
+    dispatch({type: MultiStepFormActionType.UPDATE_STEP_PLAN, payload: {selectedPlan: planId}})
   }
 
   return (
@@ -78,7 +79,7 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
             key={plan.id}
             testid={`plan-${plan.id}`}
             item={plan}
-            isSelected={plan.id === state.formData.selectedPlan}
+            isSelected={plan.id === state.selectedPlan}
             onPlanSelected={updateSelectedPlan}
           />))}
       </div>

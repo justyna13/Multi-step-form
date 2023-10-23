@@ -1,11 +1,9 @@
-import { FORM_STEPS } from "@/constants";
+import { AVAILABLE_PLANS, FORM_STEPS } from "@/constants";
 
 export interface IMultiStepFormState {
   activeStep?: FORM_STEPS;
-  formData?: {
-    name: string;
-    email: string;
-    phone: string;
-    selectedPlan: any;
-  }
+  name: string;
+  email: string;
+  phone: string;
+  selectedPlan: AVAILABLE_PLANS | null;
 }
