@@ -6,18 +6,20 @@ interface IButton {
   type?: "button" | "submit";
   onClick?: () => void;
   className?: string;
+  variant?: "prev" | "next" | "confirm"
 }
 
 export const Button: React.FC<IButton> = ({
   buttonText,
   type,
   onClick,
-  className
+  className,
+  variant
 }) => {
   return (
     <button
       onClick={onClick}
-      className={`main-btn ${className}`}
+      className={`main-btn ${className} ${variant ? 'btn-'+ variant : ''}`}
       type={type}>
       {buttonText}
     </button>

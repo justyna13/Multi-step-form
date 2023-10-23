@@ -77,7 +77,7 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
         <div className="step-bottom">
           <Button
             type="button"
-            className={`btn-next`}
+            variant="next"
             buttonText="Next Step"
             onClick={saveData}
           />

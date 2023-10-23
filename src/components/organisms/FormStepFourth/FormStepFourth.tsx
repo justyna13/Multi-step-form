@@ -25,13 +25,13 @@ export const FormStepFourth: React.FC<IFormStepFourth> = ({
       <div className="step-bottom">
         <Button
           type="button"
-          className={`btn-next`}
+           variant="next"
           buttonText="Go Back"
           onClick={onBtnPrevClicked}
         />
         <Button
           type="submit"
-          className={`btn-next`}
+          variant="confirm"
           buttonText="Confirm"
         />
       </div>

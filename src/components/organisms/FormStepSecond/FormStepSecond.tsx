@@ -90,13 +90,13 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
       <div className="step-bottom">
         <Button
           type="button"
-          className={`btn-prev`}
+          variant="prev"
           buttonText="Go Back"
           onClick={onBtnPrevClicked}
         />
         <Button
           type="button"
-          className={`btn-next`}
+           variant="next"
           buttonText="Next Step"
           onClick={saveData}
         />

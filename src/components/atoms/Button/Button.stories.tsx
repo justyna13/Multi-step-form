@@ -9,23 +9,29 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const DefaultButton: Story = {
+  args: {
+    buttonText: "default"
+  }
+}
+
 export const PrevButton: Story = {
   args: {
-    className: "btn-prev",
+    variant: "prev",
     buttonText: "Go Back"
   }
 }
 
 export const NextButton: Story = {
   args: {
-    className: "btn-next",
+    variant: "next",
     buttonText: "Next"
   }
 }
 
 export const ConfirmButton: Story = {
   args: {
-    className: "btn-confirm",
+    variant: "confirm",
     buttonText: "Confirm"
   }
 }
