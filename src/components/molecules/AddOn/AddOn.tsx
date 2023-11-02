@@ -45,9 +45,11 @@ export const AddOn: React.FC<IAddOn> = ({
         />
         <label htmlFor={`add-on-'${item.id}`}>
           <div className="add-on__details">
-            <p className="add-on__ttl">{item.name}</p>
-            <p className="add-on__desc">{item.description}</p>
-            <div className="add-on__price">+{item.pricePerMonth}/mo</div>
+            <div>
+              <p className="add-on__ttl">{item.name}</p>
+              <p className="add-on__desc">{item.description}</p>
+            </div>
+            <div className="add-on__price">+${item.pricePerMonth}/mo</div>
           </div>
         </label>
       </div>

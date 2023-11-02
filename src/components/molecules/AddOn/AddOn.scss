@@ -7,17 +7,17 @@
   cursor: pointer;
 
   &:hover {
-    border-color: $clr-button-next-focus;
+    border-color: $clr-input-border-focus;
   }
   &.selected {
     background-color: #f8f9fe;
-    border-color: $clr-button-next-focus;
+    border-color: $clr-input-border-focus;
   }
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 1.25rem;
   }
   &__details {
     display: flex;
@@ -133,4 +133,24 @@
   }
 }
 
-
+.add-on {
+  &__ttl {
+    font-weight: bold;
+    color: $clr-text-header;
+    margin-bottom: .4rem;
+    font-size: 1rem;
+  }
+  &__desc {
+    margin-top: 0;
+    color: $clr-text;
+    font-size: .9rem;
+  }
+  label {
+    flex: 1;
+  }
+  &__price {
+    color: #483eff;
+    font-size: .9rem;
+    letter-spacing: .025rem;
+  }
+}
