@@ -1,0 +1,80 @@
+$clr-summary-bg: #f8f9fe;
+$clr-hr: #ebecf1;
+$clr-link: #483eff;
+$clr-price: #5041dc;
+
+.form-summary {
+  margin-bottom: 1rem;
+
+  &__inner {
+    background-color: $clr-summary-bg;
+    border-radius: .5rem;
+    padding: .8rem 1.4rem;
+  }
+  hr {
+    border: 1px solid $clr-hr;
+  }
+}
+
+.form-summary__plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    margin-bottom: .5rem;
+  }
+
+  p {
+    color: $clr-text-header;
+    font-weight: bold;
+    margin-bottom: .5rem;
+  }
+  .link {
+    cursor: pointer;
+    font-size: .8rem;
+    color: $clr-link;
+    font-weight: normal;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+  span {
+    color: $clr-text-header;
+    font-weight: bold;
+    letter-spacing: .025rem;
+  }
+}
+
+.form-summary__add-ons {
+  padding: .4rem 0;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  p {
+    color: $clr-text;
+    margin: .5rem 0;
+    font-size: .95rem;
+  }
+  span {
+    color: $clr-text-header;
+    font-size: .9rem;
+  }
+}
+
+.form-summary__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.4rem;
+  p {
+    color: $clr-text;
+  }
+  span {
+    color: $clr-price;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}

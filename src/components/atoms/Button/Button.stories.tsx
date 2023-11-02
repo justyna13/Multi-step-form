@@ -1,4 +1,4 @@
-import { Button } from "@/components/atoms/Button/Button.tsx";
+import { Button } from "@/components/atoms";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta = {

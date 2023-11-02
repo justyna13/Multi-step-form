@@ -18,3 +18,12 @@ body {
 * {
   font-family: $ff-main;
 }
+
+.step-bottom {
+  display: flex;
+  justify-content: space-between;
+  button {
+    margin-top: 48px;
+    margin-bottom: 12px;
+  }
+}

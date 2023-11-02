@@ -1,5 +1,6 @@
-import { Header } from "@/components/atoms/Header/Header.tsx";
-import { Button } from "@/components/atoms/Button/Button.tsx";
+import { Header } from "@/components/atoms";
+import { Button } from "@/components/atoms";
+import { FormSummary } from "@/components/molecules";
 
 interface IFormStepFourth {
   testid: string;
@@ -18,20 +19,17 @@ export const FormStepFourth: React.FC<IFormStepFourth> = ({
         title={'Finishing up'}
         description={'Double-check everything looks OK before confirming.'}
       />
-
-      Total (per month/year)
-
-
+      <FormSummary />
       <div className="step-bottom">
         <Button
           type="button"
-           variant="next"
+          variant="prev"
           buttonText="Go Back"
           onClick={onBtnPrevClicked}
         />
         <Button
           type="submit"
-          variant="confirm"
+          variant="next"
           buttonText="Confirm"
         />
       </div>

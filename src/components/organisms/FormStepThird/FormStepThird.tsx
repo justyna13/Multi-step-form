@@ -1,5 +1,5 @@
-import { Header } from "@/components/atoms/Header/Header.tsx";
-import { Button } from "@/components/atoms/Button/Button.tsx";
+import { Header } from "@/components/atoms";
+import { Button } from "@/components/atoms";
 import { useFormContext } from "react-hook-form";
 import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
 import { AddOn } from "@/components/molecules/AddOn/AddOn.tsx";
