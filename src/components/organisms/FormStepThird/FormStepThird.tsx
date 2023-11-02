@@ -4,6 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
 import { AddOn } from "@/components/molecules/AddOn/AddOn.tsx";
 import "@/components/organisms/FormStepThird/FormStepThird.scss";
+import { availableAddOns } from "@/constants";
 
 interface IFormStepThird {
   testid: string;
@@ -36,30 +37,6 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
     onBtnNextClicked();
   }
 
-  const availableAddOns: Array<SingleAddOn> = [
-    {
-      id: 1,
-      name: "Online service",
-      description: "Access to multiplayer games",
-      pricePerMonth: 1,
-      fieldName: "addOns.onlineService"
-    },
-    {
-      id: 2,
-      name: "Larger storage",
-      description: "Extra 1TB of cloud save",
-      pricePerMonth: 2,
-      fieldName: "addOns.largeStorage"
-    },
-    {
-      id: 3,
-      name: "Customizable Profile",
-      description: "Custom theme on your profile",
-      pricePerMonth: 2,
-      fieldName: "addOns.customizableProfile"
-    }
-  ]
-
   return (
     <div className="form-step--third" data-testid={testid}>
       <Header
@@ -70,7 +47,7 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
 
       {availableAddOns.map(item => (
         <AddOn
-          name={item.fieldName}
+          name={`addOns.${item.fieldName}`}
           testid={`add-on-${item.id}`}
           item={item}
           key={item.id} />
