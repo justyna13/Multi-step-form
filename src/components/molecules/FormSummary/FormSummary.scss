@@ -11,9 +11,6 @@ $clr-price: #5041dc;
     border-radius: .5rem;
     padding: .8rem 1.4rem;
   }
-  hr {
-    border: 1px solid $clr-hr;
-  }
 }
 
 .form-summary__plan {
@@ -48,6 +45,7 @@ $clr-price: #5041dc;
 
 .form-summary__add-ons {
   padding: .4rem 0;
+  border-top: 1px solid $clr-hr;
   div {
     display: flex;
     justify-content: space-between;

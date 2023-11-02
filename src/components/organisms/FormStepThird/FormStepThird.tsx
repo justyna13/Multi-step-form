@@ -4,7 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
 import { AddOn } from "@/components/molecules/AddOn/AddOn.tsx";
 import "@/components/organisms/FormStepThird/FormStepThird.scss";
-import { availableAddOns } from "@/constants";
+import { availableAddOns } from "@/constants/data.tsx";
 
 interface IFormStepThird {
   testid: string;

@@ -1,5 +1,3 @@
-import { SingleAddOn } from "@/components/organisms/FormStepThird/FormStepThird.tsx";
-
 const withBasePath = (path: string) =>
   `${import.meta.env.VITE_APP_BASE_URL || ''}${path}`;
 
@@ -17,32 +15,14 @@ export enum FORM_STEPS {
 }
 
 export enum AVAILABLE_PLANS {
-  ARCADE = "ARCADE",
-  ADVANCED = "ADVANCED",
-  PRO = "PRO"
+  ARCADE = "Arcade",
+  ADVANCED = "Advanced",
+  PRO = "Pro"
+}
+
+export enum PAYMENT_TYPES {
+  PER_MONTH = "PER_MONTH",
+  PER_YEAR = "PER_YEAR"
 }
 
 
-export const availableAddOns: Array<SingleAddOn> = [
-  {
-    id: 1,
-    name: "Online service",
-    description: "Access to multiplayer games",
-    pricePerMonth: 1,
-    fieldName: "onlineService"
-  },
-  {
-    id: 2,
-    name: "Larger storage",
-    description: "Extra 1TB of cloud save",
-    pricePerMonth: 2,
-    fieldName: "largeStorage"
-  },
-  {
-    id: 3,
-    name: "Customizable Profile",
-    description: "Custom theme on your profile",
-    pricePerMonth: 2,
-    fieldName: "customizableProfile"
-  }
-]

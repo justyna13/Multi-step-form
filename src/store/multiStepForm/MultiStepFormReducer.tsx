@@ -8,7 +8,9 @@ export const multiStepFormReducer = (
 ) => {
   switch (action.type) {
     case MultiStepFormActionType.SET_ACTIVE_STEP:
-      return {...state, activeStep: action?.payload?.activeStep};
+      return { ...state, activeStep: action?.payload?.activeStep};
+    case MultiStepFormActionType.CHANGE_PAYMENT_TYPE:
+      return { ...state, paymentType: action?.payload?.paymentType}
     case MultiStepFormActionType.UPDATE_STEP_INFO:
       return {
         ...state,

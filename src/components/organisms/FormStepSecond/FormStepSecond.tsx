@@ -1,13 +1,12 @@
-import { Header } from "@/components/atoms/Header/Header.tsx";
-import { Button } from "@/components/atoms/Button/Button.tsx";
-import { Plan } from "@/components/molecules/Plan/Plan.tsx";
-import { ReactComponent as ArcadePlanIcon } from "@/assets/icons/icon-arcade.svg";
-import { ReactComponent as AdvancedPlanIcon } from "@/assets/icons/icon-advanced.svg";
-import { ReactComponent as ProPlanIcon } from "@/assets/icons/icon-pro.svg";
+import { Header } from "@/components/atoms";
+import { Button } from "@/components/atoms";
+import { Plan } from "@/components/molecules";
+
 import { ReactElement } from "react";
 import "@/components/organisms/FormStepSecond/FormStepSecond.scss";
 import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
 import { AVAILABLE_PLANS } from "@/constants";
+import { availablePlans } from "@/constants/data.tsx";
 
 interface IFormStepSecond {
   testid: string;
@@ -34,26 +33,6 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
   // const [pricesPerMonth, setPricesPerMonth] = useState(true);
   const { state, dispatch } = useMultiStepFormContext();
 
-  const availablePlans: Array<SinglePlanType> = [
-    {
-      id: AVAILABLE_PLANS.ARCADE,
-      name: "Arcade",
-      pricePerMonth: 9,
-      icon: <ArcadePlanIcon />,
-    },
-    {
-      id: AVAILABLE_PLANS.ADVANCED,
-      name: "Advanced",
-      pricePerMonth: 12,
-      icon: <AdvancedPlanIcon />,
-    },
-    {
-      id: AVAILABLE_PLANS.PRO,
-      name: "Pro",
-      pricePerMonth: 15,
-      icon: <ProPlanIcon />,
-    }
-  ]
 
   const saveData = () => {
     // const stepFields = getValues();

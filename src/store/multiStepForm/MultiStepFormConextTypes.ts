@@ -1,4 +1,4 @@
-import { AVAILABLE_PLANS, FORM_STEPS } from "@/constants";
+import { AVAILABLE_PLANS, FORM_STEPS, PAYMENT_TYPES } from "@/constants";
 
 export interface IMultiStepFormState {
   activeStep?: FORM_STEPS;
@@ -11,4 +11,7 @@ export interface IMultiStepFormState {
     largeStorage: boolean,
     customizableProfile: boolean
   };
+  totalPrice: number;
+  currency: string;
+  paymentType: PAYMENT_TYPES;
 }
