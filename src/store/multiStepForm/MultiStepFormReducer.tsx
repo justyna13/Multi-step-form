@@ -18,6 +18,8 @@ export const multiStepFormReducer = (
       };
     case MultiStepFormActionType.UPDATE_STEP_PLAN:
       return {...state, selectedPlan: action.payload?.selectedPlan}
+    case MultiStepFormActionType.UPDATE_STEP_ADDITIONAL:
+      return { ...state, addOns: action.payload?.addOns}
     default:
       return {...state};
   }

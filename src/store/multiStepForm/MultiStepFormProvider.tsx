@@ -14,6 +14,11 @@ const formInitialState: IMultiStepFormState = {
   email: "",
   phone: "",
   selectedPlan: null,
+  addOns: {
+    onlineService: false,
+    largeStorage: false,
+    customizableProfile: false,
+  }
 }
 
 export const MultiStepFormProvider: React.FC<IFormProvider> = ({

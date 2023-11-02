@@ -1,26 +1,48 @@
-import React, { useState } from "react";
+import React from "react";
 import { SingleAddOn } from "@/components/organisms/FormStepThird/FormStepThird.tsx";
 import "@/components/molecules/AddOn/AddOn.scss";
+import { useFormContext } from "react-hook-form";
+import { Input } from "@/components/atoms";
 
-interface IAddOn {
+type InputProps = React.ComponentProps<typeof Input>;
+
+interface IAddOn extends InputProps {
   testid: string;
   item: SingleAddOn;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export const AddOn: React.FC<IAddOn> = ({
+  name,
   item,
   testid,
-  disabled = false
+  disabled
 }: IAddOn) => {
-  const [selected, setSelected] = useState(false);
+  const {
+    register,
+    setValue,
+    getValues,
+    watch,
+  } = useFormContext();
+  const isSelected = watch(name) ?? false;
+
+  const handleClick = () => {
+    const valueToBeSet = !getValues(name);
+    setValue(name, valueToBeSet);
+  }
   return (
     <div
-      className={`add-on ${selected ? 'selected' : ''} ${disabled ? 'disabled' : ''}`}
-      onClick={() => setSelected(!selected)}
+      className={`add-on ${isSelected ? 'selected' : ''} ${disabled ? 'disabled' : ''}`}
+      onClick={handleClick}
       data-testid={testid}>
       <div className="checkbox-wr add-on__inner">
-        <input id={`add-on-${item.id}`} type="checkbox" disabled={disabled} />
+        <Input
+          name={name}
+          id={`add-on-${item.id}`}
+          type="checkbox"
+          disabled={disabled}
+          register={register}
+        />
         <label htmlFor={`add-on-'${item.id}`}>
           <div className="add-on__details">
             <p className="add-on__ttl">{item.name}</p>

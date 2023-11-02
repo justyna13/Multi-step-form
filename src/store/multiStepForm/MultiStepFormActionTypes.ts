@@ -17,6 +17,11 @@ export interface IPayloadAction extends IAction {
     email: string;
     phone: string;
     selectedPlan: AVAILABLE_PLANS | null;
+    addOns: {
+      onlineService: boolean,
+      largeStorage: boolean,
+      customizableProfile: boolean
+    };
   }
 }
 

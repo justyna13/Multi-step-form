@@ -1,7 +1,7 @@
 import { Header } from "@/components/atoms/Header/Header.tsx";
 import { Button } from "@/components/atoms/Button/Button.tsx";
 import { useFormContext } from "react-hook-form";
-import { useMultiStepFormContext } from "@/store";
+import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
 import { AddOn } from "@/components/molecules/AddOn/AddOn.tsx";
 import "@/components/organisms/FormStepThird/FormStepThird.scss";
 
@@ -17,6 +17,7 @@ export type SingleAddOn = {
   name: string;
   pricePerMonth: number;
   description: string;
+  fieldName: string;
 }
 
 export const FormStepThird: React.FC<IFormStepThird> = ({
@@ -27,12 +28,11 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
   const {
     getValues
   } = useFormContext();
-  const {state, dispatch} = useMultiStepFormContext();
+  const {dispatch} = useMultiStepFormContext();
 
   const saveData = () => {
     const stepFields = getValues();
-    console.log(state, dispatch)
-    console.log(stepFields)
+    dispatch({ type: MultiStepFormActionType.UPDATE_STEP_ADDITIONAL, payload: stepFields});
     onBtnNextClicked();
   }
 
@@ -41,19 +41,22 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
       id: 1,
       name: "Online service",
       description: "Access to multiplayer games",
-      pricePerMonth: 1
+      pricePerMonth: 1,
+      fieldName: "addOns.onlineService"
     },
     {
       id: 2,
       name: "Larger storage",
       description: "Extra 1TB of cloud save",
       pricePerMonth: 2,
+      fieldName: "addOns.largeStorage"
     },
     {
       id: 3,
       name: "Customizable Profile",
       description: "Custom theme on your profile",
       pricePerMonth: 2,
+      fieldName: "addOns.customizableProfile"
     }
   ]
 
@@ -66,7 +69,11 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
       />
 
       {availableAddOns.map(item => (
-        <AddOn testid={`add-on-${item.id}`} item={item} key={item.id} />
+        <AddOn
+          name={item.fieldName}
+          testid={`add-on-${item.id}`}
+          item={item}
+          key={item.id} />
       ))}
 
       <div className="step-bottom">
