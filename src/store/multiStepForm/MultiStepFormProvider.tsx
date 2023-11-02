@@ -9,7 +9,7 @@ interface IFormProvider {
 }
 
 const formInitialState: IMultiStepFormState = {
-  activeStep: FORM_STEPS.PLAN,
+  activeStep: FORM_STEPS.ADDITIONAL,
   name: "",
   email: "",
   phone: "",

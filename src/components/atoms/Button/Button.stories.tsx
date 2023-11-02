@@ -2,7 +2,7 @@ import { Button } from "@/components/atoms/Button/Button.tsx";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-  title: "Button",
+  title: "Atoms/Button",
   component: Button
 } satisfies Meta<typeof Button>;
 
