@@ -10,6 +10,7 @@
     align-items: center;
     border-radius: 50%;
     width: 32px;
+    min-width: 32px;
     height: 32px;
     border: 1px solid #fff;
     color: #fff;
@@ -20,13 +21,16 @@
   &__info {
     color: $clr-text;
     font-weight: lighter;
-    font-size: .8rem;
+    font-size: .7rem;
     padding-bottom: 12px;
   }
 
   &__title {
     color: $clr-text-step;
-    font-size: .9rem;
+    font-size: .65rem;
+    white-space: nowrap;
+    font-weight: bold;
+    letter-spacing: 1.2px;
   }
 
   &.active {

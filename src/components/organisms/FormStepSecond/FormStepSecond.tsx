@@ -7,6 +7,7 @@ import "@/components/organisms/FormStepSecond/FormStepSecond.scss";
 import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
 import { AVAILABLE_PLANS } from "@/constants";
 import { availablePlans } from "@/constants/data.tsx";
+import { ToggleSwitch } from "@/components/atoms/ToggleSwitch/ToggleSwitch.tsx";
 
 interface IFormStepSecond {
   testid: string;
@@ -63,7 +64,7 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
       </div>
 
       <div className="plans-month-year-price-switcher">
-        Monthly Yearly
+        <ToggleSwitch name="plan-switcher" onLabel="Yearly" offLabel="Monthly"  />
       </div>
 
       <div className="step-bottom">

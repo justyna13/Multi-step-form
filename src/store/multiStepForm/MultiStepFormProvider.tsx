@@ -9,7 +9,7 @@ interface IFormProvider {
 }
 
 const formInitialState: IMultiStepFormState = {
-  activeStep: FORM_STEPS.ADDITIONAL,
+  activeStep: FORM_STEPS.PLAN,
   name: "",
   email: "",
   phone: "",
@@ -18,7 +18,10 @@ const formInitialState: IMultiStepFormState = {
     onlineService: false,
     largeStorage: false,
     customizableProfile: false,
-  }
+  },
+  totalPrice: 0,
+  // currency:
+  // paymentType
 }
 
 export const MultiStepFormProvider: React.FC<IFormProvider> = ({
