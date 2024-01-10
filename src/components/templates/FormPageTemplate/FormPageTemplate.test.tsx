@@ -1,7 +1,5 @@
-import { describe } from "vitest";
+import { describe } from 'vitest';
 
-describe("FormPageTemplate", () => {
-  it("should show active step component", () => {
-
-  })
-})
+describe('FormPageTemplate', () => {
+  it('should show active step component', () => {});
+});

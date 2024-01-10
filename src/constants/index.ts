@@ -8,21 +8,19 @@ export const Slugs = {
 };
 
 export enum FORM_STEPS {
-  INFO = "INFO",
-  PLAN = "PLAN",
-  ADDITIONAL = "ADDITIONAL ADD-ONS",
-  SUMMARY = "SUMMARY"
+  INFO = 'INFO',
+  PLAN = 'PLAN',
+  ADDITIONAL = 'ADDITIONAL ADD-ONS',
+  SUMMARY = 'SUMMARY'
 }
 
 export enum AVAILABLE_PLANS {
-  ARCADE = "Arcade",
-  ADVANCED = "Advanced",
-  PRO = "Pro"
+  ARCADE = 'Arcade',
+  ADVANCED = 'Advanced',
+  PRO = 'Pro'
 }
 
-export enum PAYMENT_TYPES {
-  PER_MONTH = "PER_MONTH",
-  PER_YEAR = "PER_YEAR"
+export enum PAYMENT_PERIODS {
+  PER_MONTH = 'PER_MONTH',
+  PER_YEAR = 'PER_YEAR'
 }
-
-

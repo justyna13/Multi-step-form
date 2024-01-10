@@ -1,4 +1,4 @@
-import "@/components/atoms/FormStep/FormStep.scss";
+import '@/components/atoms/FormStep/FormStep.scss';
 
 interface IFormStep {
   testid: string;
@@ -14,12 +14,15 @@ export const FormStep: React.FC<IFormStep> = ({
   number
 }: IFormStep) => {
   return (
-    <div className={`form-step ${isActive ? 'active': ''}`} data-testid={testid}>
+    <div
+      className={`form-step ${isActive ? 'active' : ''}`}
+      data-testid={testid}>
       <div className="form-step__number">{number}</div>
       <div>
-        <span className="form-step__info">Step { number }</span><br/>
-        <span className="form-step__title">{ label }</span>
+        <span className="form-step__info">Step {number}</span>
+        <br />
+        <span className="form-step__title">{label}</span>
       </div>
     </div>
-  )
-}
+  );
+};

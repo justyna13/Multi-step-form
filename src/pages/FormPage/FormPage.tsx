@@ -1,9 +1,9 @@
-import { FormPageTemplate } from "@/components/templates";
+import { FormPageTemplate } from '@/components/templates';
 
 export const FormPage: React.FC = () => {
   return (
     <main>
       <FormPageTemplate testid={'multiStepForm-page-template'} />
     </main>
-  )
-}
+  );
+};

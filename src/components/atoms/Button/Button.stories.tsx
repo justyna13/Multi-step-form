@@ -1,8 +1,9 @@
-import { Button } from "@/components/atoms";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from '@storybook/react';
+
+import { Button } from '@/components/atoms';
 
 const meta = {
-  title: "Atoms/Button",
+  title: 'Atoms/Button',
   component: Button
 } satisfies Meta<typeof Button>;
 
@@ -11,27 +12,27 @@ type Story = StoryObj<typeof meta>;
 
 export const DefaultButton: Story = {
   args: {
-    buttonText: "default"
+    buttonText: 'default'
   }
-}
+};
 
 export const PrevButton: Story = {
   args: {
-    variant: "prev",
-    buttonText: "Go Back"
+    variant: 'prev',
+    buttonText: 'Go Back'
   }
-}
+};
 
 export const NextButton: Story = {
   args: {
-    variant: "next",
-    buttonText: "Next"
+    variant: 'next',
+    buttonText: 'Next'
   }
-}
+};
 
 export const ConfirmButton: Story = {
   args: {
-    variant: "confirm",
-    buttonText: "Confirm"
+    variant: 'confirm',
+    buttonText: 'Confirm'
   }
-}
+};

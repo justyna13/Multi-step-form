@@ -1,10 +1,11 @@
-import { Header } from "@/components/atoms";
-import { Button } from "@/components/atoms";
-import { useFormContext } from "react-hook-form";
-import { MultiStepFormActionType, useMultiStepFormContext } from "@/store";
-import { AddOn } from "@/components/molecules/AddOn/AddOn.tsx";
-import "@/components/organisms/FormStepThird/FormStepThird.scss";
-import { availableAddOns } from "@/constants/data.tsx";
+import { useFormContext } from 'react-hook-form';
+
+import { Header } from '@/components/atoms';
+import { Button } from '@/components/atoms';
+import { AddOn } from '@/components/molecules';
+import '@/components/organisms/FormStepThird/FormStepThird.scss';
+import { availableAddOns } from '@/constants/data.tsx';
+import { MultiStepFormActionType, useMultiStepFormContext } from '@/store';
 
 interface IFormStepThird {
   testid: string;
@@ -19,23 +20,24 @@ export type SingleAddOn = {
   pricePerMonth: number;
   description: string;
   fieldName: string;
-}
+};
 
 export const FormStepThird: React.FC<IFormStepThird> = ({
   testid,
   onBtnPrevClicked,
   onBtnNextClicked
 }: IFormStepThird) => {
-  const {
-    getValues
-  } = useFormContext();
-  const {dispatch} = useMultiStepFormContext();
+  const { getValues } = useFormContext();
+  const { dispatch } = useMultiStepFormContext();
 
   const saveData = () => {
     const stepFields = getValues();
-    dispatch({ type: MultiStepFormActionType.UPDATE_STEP_ADDITIONAL, payload: stepFields});
+    dispatch({
+      type: MultiStepFormActionType.UPDATE_STEP_ADDITIONAL,
+      payload: stepFields
+    });
     onBtnNextClicked();
-  }
+  };
 
   return (
     <div className="form-step--third" data-testid={testid}>
@@ -45,28 +47,29 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
         description={'Add-ons help enhance your gaming experience. '}
       />
 
-      {availableAddOns.map(item => (
+      {availableAddOns.map((item) => (
         <AddOn
           name={`addOns.${item.fieldName}`}
           testid={`add-on-${item.id}`}
           item={item}
-          key={item.id} />
+          key={item.id}
+        />
       ))}
 
       <div className="step-bottom">
         <Button
           type="button"
-           variant="prev"
+          variant="prev"
           buttonText="Go Back"
           onClick={onBtnPrevClicked}
         />
         <Button
           type="button"
-           variant="next"
+          variant="next"
           buttonText="Next Step"
           onClick={saveData}
         />
       </div>
     </div>
-  )
-}
+  );
+};

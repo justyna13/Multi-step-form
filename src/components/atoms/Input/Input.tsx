@@ -1,6 +1,6 @@
-import React from "react";
-import { RegisterOptions, UseFormRegisterReturn } from "react-hook-form";
-import "@/components/atoms/Input/Input.scss";
+import React from 'react';
+import { RegisterOptions, UseFormRegisterReturn } from 'react-hook-form';
+import '@/components/atoms/Input/Input.scss';
 
 interface IInput {
   id?: string;
@@ -14,15 +14,17 @@ interface IInput {
 
 export const Input: React.FC<IInput> = React.memo(
   ({
-     register,
-     name,
-     id,
-     disabled,
-     type,
-     placeholder,
-     validationSchema,
-   }: IInput) => {
-    const isFormRegistered = register ? register(name, validationSchema) : undefined;
+    register,
+    name,
+    id,
+    disabled,
+    type,
+    placeholder,
+    validationSchema
+  }: IInput) => {
+    const isFormRegistered = register
+      ? register(name, validationSchema)
+      : undefined;
 
     return (
       <input
@@ -33,6 +35,6 @@ export const Input: React.FC<IInput> = React.memo(
         placeholder={placeholder}
         {...isFormRegistered}
       />
-    )
+    );
   }
 );

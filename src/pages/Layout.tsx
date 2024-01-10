@@ -1,6 +1,7 @@
 // import { FormNavigation } from '@/components/organisms';
-import { Outlet } from "react-router-dom";
-import { Footer } from "@/components/molecules/Footer/Footer.tsx";
+import { Outlet } from 'react-router-dom';
+
+import { Footer } from '@/components/molecules/Footer/Footer.tsx';
 
 interface ILayout {
   testid: string;
@@ -13,5 +14,5 @@ export const Layout: React.FC<ILayout> = ({ testid }: ILayout) => {
       <Outlet />
       <Footer testid={'footer'} />
     </div>
-  )
-}
+  );
+};

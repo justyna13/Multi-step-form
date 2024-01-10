@@ -1,8 +1,8 @@
-import React from "react";
-import { SingleAddOn } from "@/components/organisms/FormStepThird/FormStepThird.tsx";
-import "@/components/molecules/AddOn/AddOn.scss";
-import { useFormContext } from "react-hook-form";
-import { Input } from "@/components/atoms";
+import { useFormContext } from 'react-hook-form';
+
+import { Input } from '@/components/atoms';
+import '@/components/molecules/AddOn/AddOn.scss';
+import { SingleAddOn } from '@/components/organisms/FormStepThird/FormStepThird.tsx';
 
 type InputProps = React.ComponentProps<typeof Input>;
 
@@ -18,21 +18,18 @@ export const AddOn: React.FC<IAddOn> = ({
   testid,
   disabled
 }: IAddOn) => {
-  const {
-    register,
-    setValue,
-    getValues,
-    watch,
-  } = useFormContext();
+  const { register, setValue, getValues, watch } = useFormContext();
   const isSelected = watch(name) ?? false;
 
   const handleClick = () => {
     const valueToBeSet = !getValues(name);
     setValue(name, valueToBeSet);
-  }
+  };
   return (
     <div
-      className={`add-on ${isSelected ? 'selected' : ''} ${disabled ? 'disabled' : ''}`}
+      className={`add-on ${isSelected ? 'selected' : ''} ${
+        disabled ? 'disabled' : ''
+      }`}
       onClick={handleClick}
       data-testid={testid}>
       <div className="checkbox-wr add-on__inner">
@@ -54,5 +51,5 @@ export const AddOn: React.FC<IAddOn> = ({
         </label>
       </div>
     </div>
-  )
-}
+  );
+};

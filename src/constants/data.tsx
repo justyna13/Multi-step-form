@@ -1,51 +1,51 @@
-import { AVAILABLE_PLANS } from "@/constants/index.ts";
-import { SinglePlanType } from "@/components/organisms/FormStepSecond/FormStepSecond.tsx";
-import { ReactComponent as ArcadePlanIcon } from "@/assets/icons/icon-arcade.svg";
-import { ReactComponent as AdvancedPlanIcon } from "@/assets/icons/icon-advanced.svg";
-import { ReactComponent as ProPlanIcon } from "@/assets/icons/icon-pro.svg";
-import { SingleAddOn } from "@/components/organisms/FormStepThird/FormStepThird.tsx";
+import { ReactComponent as AdvancedPlanIcon } from '@/assets/icons/icon-advanced.svg';
+import { ReactComponent as ArcadePlanIcon } from '@/assets/icons/icon-arcade.svg';
+import { ReactComponent as ProPlanIcon } from '@/assets/icons/icon-pro.svg';
+import { SinglePlanType } from '@/components/organisms/FormStepSecond/FormStepSecond.tsx';
+import { SingleAddOn } from '@/components/organisms/FormStepThird/FormStepThird.tsx';
+import { AVAILABLE_PLANS } from '@/constants/index.ts';
 
 export const availablePlans: Array<SinglePlanType> = [
   {
     id: AVAILABLE_PLANS.ARCADE,
-    name: "Arcade",
+    name: 'Arcade',
     pricePerMonth: 9,
-    icon: <ArcadePlanIcon />,
+    icon: <ArcadePlanIcon />
   },
   {
     id: AVAILABLE_PLANS.ADVANCED,
-    name: "Advanced",
+    name: 'Advanced',
     pricePerMonth: 12,
-    icon: <AdvancedPlanIcon />,
+    icon: <AdvancedPlanIcon />
   },
   {
     id: AVAILABLE_PLANS.PRO,
-    name: "Pro",
+    name: 'Pro',
     pricePerMonth: 15,
-    icon: <ProPlanIcon />,
+    icon: <ProPlanIcon />
   }
 ];
 
 export const availableAddOns: Array<SingleAddOn> = [
   {
     id: 1,
-    name: "Online service",
-    description: "Access to multiplayer games",
+    name: 'Online service',
+    description: 'Access to multiplayer games',
     pricePerMonth: 1,
-    fieldName: "onlineService"
+    fieldName: 'onlineService'
   },
   {
     id: 2,
-    name: "Larger storage",
-    description: "Extra 1TB of cloud save",
+    name: 'Larger storage',
+    description: 'Extra 1TB of cloud save',
     pricePerMonth: 2,
-    fieldName: "largeStorage"
+    fieldName: 'largeStorage'
   },
   {
     id: 3,
-    name: "Customizable Profile",
-    description: "Custom theme on your profile",
+    name: 'Customizable Profile',
+    description: 'Custom theme on your profile',
     pricePerMonth: 2,
-    fieldName: "customizableProfile"
+    fieldName: 'customizableProfile'
   }
 ];

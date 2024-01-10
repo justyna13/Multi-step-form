@@ -1,6 +1,7 @@
-import { Input } from "@/components/atoms";
-import { RegisterOptions, useFormContext } from "react-hook-form";
-import "@/components/molecules/FormInput/FormInput.scss";
+import { RegisterOptions, useFormContext } from 'react-hook-form';
+
+import { Input } from '@/components/atoms';
+import '@/components/molecules/FormInput/FormInput.scss';
 
 type InputProps = React.ComponentProps<typeof Input>;
 
@@ -18,7 +19,7 @@ export const FormInput: React.FC<IFormInput> = ({
 }: IFormInput) => {
   const {
     register,
-    formState: { errors}
+    formState: { errors }
   } = useFormContext();
   const isError = errors[name];
 
@@ -26,9 +27,9 @@ export const FormInput: React.FC<IFormInput> = ({
     <div className="form-control">
       <div className="label-wr">
         <label className="form-label">{label}</label>
-        { isError ? (
+        {isError ? (
           <span className="error-msg">{isError.message as string}</span>
-        ): null}
+        ) : null}
       </div>
       <Input
         name={name}
@@ -38,5 +39,5 @@ export const FormInput: React.FC<IFormInput> = ({
         register={register}
       />
     </div>
-  )
-}
+  );
+};

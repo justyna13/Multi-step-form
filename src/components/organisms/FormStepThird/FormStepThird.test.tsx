@@ -1,18 +1,18 @@
-import { describe, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { FormStepThird } from "@/components/organisms";
+import { render, screen } from '@testing-library/react';
+import { describe, expect } from 'vitest';
 
-describe("FormStepThird", () => {
+import { FormStepThird } from '@/components/organisms';
 
-  it("should render thirdStep", () => {
+describe('FormStepThird', () => {
+  it('should render thirdStep', () => {
     render(
       <FormStepThird
         onBtnNextClicked={() => {}}
         onBtnPrevClicked={() => {}}
-        testid={'multiStepForm-step-third'} />
+        testid={'multiStepForm-step-third'}
+      />
     );
     const formThirdStep = screen.getByTestId('multiStepForm-step-third');
     expect(formThirdStep).toBeInTheDocument();
-  })
-
-})
+  });
+});

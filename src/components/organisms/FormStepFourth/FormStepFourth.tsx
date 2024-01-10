@@ -1,6 +1,6 @@
-import { Header } from "@/components/atoms";
-import { Button } from "@/components/atoms";
-import { FormSummary } from "@/components/molecules";
+import { Header } from '@/components/atoms';
+import { Button } from '@/components/atoms';
+import { FormSummary } from '@/components/molecules';
 
 interface IFormStepFourth {
   testid: string;
@@ -27,13 +27,8 @@ export const FormStepFourth: React.FC<IFormStepFourth> = ({
           buttonText="Go Back"
           onClick={onBtnPrevClicked}
         />
-        <Button
-          type="submit"
-          variant="next"
-          buttonText="Confirm"
-        />
+        <Button type="submit" variant="next" buttonText="Confirm" />
       </div>
     </div>
   );
-
-}
+};

@@ -1,7 +1,8 @@
-import React from "react";
-import { SinglePlanType } from "@/components/organisms/FormStepSecond/FormStepSecond.tsx";
-import "@/components/molecules/Plan/Plan.scss";
-import { AVAILABLE_PLANS } from "@/constants";
+import React from 'react';
+
+import { SinglePlanType } from '@/components/organisms/FormStepSecond/FormStepSecond.tsx';
+import '@/components/molecules/Plan/Plan.scss';
+import { AVAILABLE_PLANS } from '@/constants';
 
 interface IPlan {
   item: SinglePlanType;
@@ -10,15 +11,15 @@ interface IPlan {
   onPlanSelected: (id: AVAILABLE_PLANS) => void;
 }
 
-export const Plan:React.FC<IPlan> = ({
+export const Plan: React.FC<IPlan> = ({
   item,
   testid,
   isSelected,
-  onPlanSelected,
+  onPlanSelected
 }: IPlan) => {
   return (
     <div
-      className={`single-plan ${isSelected ? 'selected': ''}`}
+      className={`single-plan ${isSelected ? 'selected' : ''}`}
       onClick={() => onPlanSelected(item.id)}
       data-testid={testid}>
       {item.icon}
@@ -27,5 +28,5 @@ export const Plan:React.FC<IPlan> = ({
         <p className="single-plan__desc">${item.pricePerMonth}/mo</p>
       </div>
     </div>
-  )
-}
+  );
+};

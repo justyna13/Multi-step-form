@@ -1,9 +1,8 @@
-import React, { createContext, useContext, useState } from "react";
-
+import React, { createContext, useContext, useState } from 'react';
 
 export const AppStateContext = createContext({});
 
-export function AppProvider({ children }: { children: React.ReactNode } ) {
+export function AppProvider({ children }: { children: React.ReactNode }) {
   const value = useState({});
   return (
     <AppStateContext.Provider value={value}>
@@ -12,10 +11,11 @@ export function AppProvider({ children }: { children: React.ReactNode } ) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useAppState() {
   const context = useContext(AppStateContext);
   if (!context) {
-    throw new Error("useAppState must be used within the AppProvider");
+    throw new Error('useAppState must be used within the AppProvider');
   }
   return context;
 }

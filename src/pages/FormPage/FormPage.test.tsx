@@ -1,7 +1,5 @@
-import { describe } from "vitest";
+import { describe } from 'vitest';
 
-describe("Form Page", () => {
-  it("first test", () => {
-
-  })
-})
+describe('Form Page', () => {
+  it('first test', () => {});
+});

@@ -1,26 +1,28 @@
-import { describe, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { FormStepFirst } from "@/components/organisms";
+import { render, screen } from '@testing-library/react';
+import { describe, expect } from 'vitest';
 
-describe("FormStepFirst", () => {
+import { FormStepFirst } from '@/components/organisms';
 
-  it("should render firstStep", () => {
+describe('FormStepFirst', () => {
+  it('should render firstStep', () => {
     render(
       <FormStepFirst
         onBtnNextClicked={() => {}}
-        testid={'multiStepForm-step-first'} />
+        testid={'multiStepForm-step-first'}
+      />
     );
     const formFirstStep = screen.getByTestId('multiStepForm-step-first');
     expect(formFirstStep).toBeInTheDocument();
-  })
+  });
 
-  it("should be visible on render", () => {
+  it('should be visible on render', () => {
     render(
       <FormStepFirst
         onBtnNextClicked={() => {}}
-        testid={'multiStepForm-step-first'} />
+        testid={'multiStepForm-step-first'}
+      />
     );
     const formFirstStep = screen.getByTestId('multiStepForm-step-first');
-    expect(formFirstStep).not.toHaveClass("hidden");
-  })
-})
+    expect(formFirstStep).not.toHaveClass('hidden');
+  });
+});

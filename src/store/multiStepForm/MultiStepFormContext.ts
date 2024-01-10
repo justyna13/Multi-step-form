@@ -1,13 +1,20 @@
-import React from "react";
+import React from 'react';
 
-export const MultiStepFormContext = React.createContext<any | undefined>(undefined);
+import { IMultiStepFormContext } from '@/store/multiStepForm/MultiStepFormConextTypes.ts';
+
+export const MultiStepFormContext = React.createContext<
+  IMultiStepFormContext | undefined
+>(undefined);
 
 export const useMultiStepFormContext = () => {
-  const context = React.useContext(MultiStepFormContext);
+  const context: IMultiStepFormContext | undefined =
+    React.useContext(MultiStepFormContext);
 
   if (context === undefined) {
-    throw new Error("useMultiStepFormContext must be used within MultiStepFormProvider")
+    throw new Error(
+      'useMultiStepFormContext must be used within MultiStepFormProvider'
+    );
   }
 
   return context;
-}
+};

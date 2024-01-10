@@ -1,16 +1,16 @@
-import { describe, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { FormNavigation } from "@/components/molecules";
-import { MultiStepFormProvider } from "@/store";
+import { render, screen } from '@testing-library/react';
+import { describe, expect } from 'vitest';
 
+import { FormNavigation } from '@/components/molecules';
+import { MultiStepFormProvider } from '@/store';
 
-describe("Navigation", () => {
-  it("should render 4 steps", () => {
+describe('Navigation', () => {
+  it('should render 4 steps', () => {
     render(
       <MultiStepFormProvider>
         <FormNavigation testid={'form-navigation'} />
       </MultiStepFormProvider>
-    )
+    );
 
     const firstStep = screen.getByTestId('form-step-1');
     const secondStep = screen.getByTestId('form-step-2');
@@ -21,5 +21,5 @@ describe("Navigation", () => {
     expect(secondStep).toBeInTheDocument();
     expect(thirdStep).toBeInTheDocument();
     expect(fourthStep).toBeInTheDocument();
-  })
-})
+  });
+});

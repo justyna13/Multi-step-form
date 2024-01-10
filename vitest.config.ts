@@ -35,7 +35,7 @@ export default defineConfig((env) =>
             'src/pages/**/__mocks__/**',
             'src/App.tsx',
             'src/index.tsx',
-            'src/router.tsx',
+            'src/router.tsx'
           ],
           reporter: ['text', 'json', 'html'],
           lines: 80,
