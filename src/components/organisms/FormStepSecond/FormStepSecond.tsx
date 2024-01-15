@@ -37,7 +37,7 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
   const saveData = async () => {
     const stepFields = getValues();
     if (!stepFields.selectedPlan) {
-      setStepInvalid(true)
+      setStepInvalid(true);
       return;
     }
     onBtnNextClicked();
@@ -89,13 +89,11 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
             />
           ))}
         </div>
-        {
-          stepInvalid ?
-            <div className="label-wr">
-              <span className="error-msg">Select one of the plans above</span>
-            </div>
-            : null
-        }
+        {stepInvalid ? (
+          <div className="label-wr">
+            <span className="error-msg">Select one of the plans above</span>
+          </div>
+        ) : null}
       </div>
       <div className="plans-month-year-price-switcher">
         <ToggleSwitch
