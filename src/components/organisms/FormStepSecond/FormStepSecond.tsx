@@ -41,8 +41,13 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
   const updateSelectedPlan = (planId: AVAILABLE_PLANS) => {
     setValue('selectedPlan', planId);
     dispatch({
-      type: MultiStepFormActionType.UPDATE_STEP_PLAN,
-      payload: { selectedPlan: planId }
+      type: MultiStepFormActionType.UPDATE_FORM_DATA,
+      payload: {
+        formData: {
+          ...state.formData,
+          selectedPlan: planId
+        }
+      }
     });
   };
 
@@ -72,7 +77,7 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
             key={plan.id}
             testid={`plan-${plan.id}`}
             item={plan}
-            isSelected={plan.id === state.selectedPlan}
+            isSelected={plan.id === state.formData.selectedPlan}
             onPlanSelected={updateSelectedPlan}
           />
         ))}

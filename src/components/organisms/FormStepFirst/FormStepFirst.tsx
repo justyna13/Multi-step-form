@@ -19,14 +19,23 @@ export const FormStepFirst: React.FC<IFormStepFirst> = ({
   const { dispatch } = useMultiStepFormContext();
 
   const { getValues, trigger } = useFormContext();
+  const { state } = useMultiStepFormContext();
 
   const saveData = async () => {
     const isStepValid = await trigger();
     if (!isStepValid) return;
     const stepFields = getValues();
+
     dispatch({
-      type: MultiStepFormActionType.UPDATE_STEP_INFO,
-      payload: stepFields
+      type: MultiStepFormActionType.UPDATE_FORM_DATA,
+      payload: {
+        formData: {
+          ...state.formData,
+          name: stepFields.name,
+          email: stepFields.email,
+          phone: stepFields.phone
+        }
+      }
     });
     onBtnNextClicked();
   };

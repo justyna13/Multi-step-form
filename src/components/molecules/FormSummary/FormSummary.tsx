@@ -9,8 +9,8 @@ export const FormSummary = () => {
   const { state, dispatch } = useMultiStepFormContext();
 
   const perMonth = true;
-  const pricePerMonth = state.selectedPlan
-    ? availablePlans.find((plan) => plan.id === state.selectedPlan)
+  const pricePerMonth = state.formData.selectedPlan
+    ? availablePlans.find((plan) => plan.id === state.formData.selectedPlan)
         ?.pricePerMonth
     : 0;
   const pricePerYear = pricePerMonth ? pricePerMonth * 12 : 0;
@@ -26,7 +26,7 @@ export const FormSummary = () => {
       <div className="form-summary__inner">
         <div className="form-summary__plan">
           <div>
-            <p>{state.selectedPlan} (Monthly)</p>
+            <p>{state.formData.selectedPlan} (Monthly)</p>
             <span className="link" onClick={navigateToSecondStep}>
               Change
             </span>
@@ -37,13 +37,13 @@ export const FormSummary = () => {
             <span>+${pricePerYear}/year</span>
           )}
         </div>
-        {Object.values(state.addOns).filter((item) => item).length ? (
+        {Object.values(state.formData.addOns).filter((item) => item).length ? (
           <div className="form-summary__add-ons">
             {availableAddOns.map((item: SingleAddOn) =>
-              state.addOns[item.fieldName] ? (
+              state.formData.addOns[item.fieldName] ? (
                 <div key={item.id}>
                   <p>{item.name}</p>
-                  <p>{state.addOns[item.fieldName]}</p>
+                  <p>{state.formData.addOns[item.fieldName]}</p>
                   <span>+${item.pricePerMonth}/mo</span>
                 </div>
               ) : null

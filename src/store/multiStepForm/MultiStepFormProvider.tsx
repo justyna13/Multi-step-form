@@ -11,18 +11,20 @@ interface IFormProvider {
 
 const formInitialState: IMultiStepFormState = {
   activeStep: FORM_STEPS.PLAN,
-  name: '',
-  email: '',
-  phone: '',
-  selectedPlan: null,
-  addOns: {
-    onlineService: false,
-    largeStorage: false,
-    customizableProfile: false
+  formData: {
+    name: '',
+    email: '',
+    phone: '',
+    selectedPlan: null,
+    addOns: {
+      onlineService: false,
+      largeStorage: false,
+      customizableProfile: false
+    }
   },
   totalPrice: 0,
-  paymentPeriod: PAYMENT_PERIODS.PER_MONTH,
-  currency: 'EUR'
+  currency: 'EUR',
+  paymentPeriod: PAYMENT_PERIODS.PER_MONTH
 };
 
 export const MultiStepFormProvider: React.FC<IFormProvider> = ({

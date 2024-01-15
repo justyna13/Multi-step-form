@@ -19,7 +19,7 @@ export type SingleAddOn = {
   name: string;
   pricePerMonth: number;
   description: string;
-  fieldName: string;
+  fieldName: 'onlineService' | 'largeStorage' | 'customizableProfile';
 };
 
 export const FormStepThird: React.FC<IFormStepThird> = ({
@@ -29,12 +29,19 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
 }: IFormStepThird) => {
   const { getValues } = useFormContext();
   const { dispatch } = useMultiStepFormContext();
+  const { state } = useMultiStepFormContext();
 
   const saveData = () => {
     const stepFields = getValues();
+
     dispatch({
-      type: MultiStepFormActionType.UPDATE_STEP_ADDITIONAL,
-      payload: stepFields
+      type: MultiStepFormActionType.UPDATE_FORM_DATA,
+      payload: {
+        formData: {
+          ...state.formData,
+          addOns: stepFields.addOns
+        }
+      }
     });
     onBtnNextClicked();
   };
