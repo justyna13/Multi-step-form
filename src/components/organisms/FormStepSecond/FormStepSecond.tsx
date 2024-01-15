@@ -27,14 +27,19 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
   onBtnNextClicked,
   onBtnPrevClicked
 }: IFormStepSecond) => {
+  const [stepInvalid, setStepInvalid] = useState(false);
   const { state, dispatch } = useMultiStepFormContext();
-  const { setValue } = useFormContext();
+  const { setValue, getValues } = useFormContext();
   const [paymentPeriodChecked, setPaymentPeriodChecked] = useState(
     state.paymentPeriod === PAYMENT_PERIODS.PER_YEAR
   );
 
-  const saveData = () => {
-    // const stepFields = getValues();
+  const saveData = async () => {
+    const stepFields = getValues();
+    if (!stepFields.selectedPlan) {
+      setStepInvalid(true)
+      return;
+    }
     onBtnNextClicked();
   };
 
@@ -49,6 +54,7 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
         }
       }
     });
+    setStepInvalid(false);
   };
 
   const handlePaymentPeriodChanged = () => {
@@ -71,18 +77,26 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
         title={'Select your plan'}
         description={'You have the option of monthly or yearly billing.'}
       />
-      <div className="plans-wr">
-        {availablePlans.map((plan) => (
-          <Plan
-            key={plan.id}
-            testid={`plan-${plan.id}`}
-            item={plan}
-            isSelected={plan.id === state.formData.selectedPlan}
-            onPlanSelected={updateSelectedPlan}
-          />
-        ))}
+      <div className="form-control">
+        <div className="plans-wr">
+          {availablePlans.map((plan) => (
+            <Plan
+              key={plan.id}
+              testid={`plan-${plan.id}`}
+              item={plan}
+              isSelected={plan.id === state.formData.selectedPlan}
+              onPlanSelected={updateSelectedPlan}
+            />
+          ))}
+        </div>
+        {
+          stepInvalid ?
+            <div className="label-wr">
+              <span className="error-msg">Select one of the plans above</span>
+            </div>
+            : null
+        }
       </div>
-
       <div className="plans-month-year-price-switcher">
         <ToggleSwitch
           name="paymentPeriod"
@@ -92,7 +106,6 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
           onChange={handlePaymentPeriodChanged}
         />
       </div>
-
       <div className="step-bottom">
         <Button
           type="button"
