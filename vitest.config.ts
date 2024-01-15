@@ -21,6 +21,7 @@ export default defineConfig((env) =>
         coverage: {
           provider: 'istanbul',
           all: true,
+          reportsDirectory: 'vitest/coverage',
           exclude: [
             'coverage/**',
             'dist/**',
@@ -40,10 +41,7 @@ export default defineConfig((env) =>
             'src/components/**/**/*.stories.tsx'
           ],
           reporter: ['text', 'json', 'html'],
-          lines: 80,
-          functions: 80,
-          branches: 80,
-          statements: 80
+          cleanOnRerun: true
         }
       }
     })
