@@ -1,6 +1,7 @@
-import { describe, expect } from "vitest";
-import { render } from "@testing-library/react";
-import { Input } from "@/components/atoms";
+import { render } from '@testing-library/react';
+import { describe, expect } from 'vitest';
+
+import { Input } from '@/components/atoms';
 
 describe('Input', () => {
   it('should match snapshot', () => {

@@ -10,7 +10,6 @@ interface ILayout {
 export const Layout: React.FC<ILayout> = ({ testid }: ILayout) => {
   return (
     <div data-testid={testid}>
-      {/*<FormNavigation testid="main-menu" />*/}
       <Outlet />
       <Footer testid={'footer'} />
     </div>

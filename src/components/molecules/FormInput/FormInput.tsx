@@ -24,7 +24,7 @@ export const FormInput: React.FC<IFormInput> = ({
   const isError = errors[name];
 
   return (
-    <div className="form-control">
+    <div className="form-control" data-testid={`form-input-${name}`}>
       <div className="label-wr">
         <label className="form-label">{label}</label>
         {isError ? (

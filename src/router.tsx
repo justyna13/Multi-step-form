@@ -1,8 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import { Slugs } from '@/constants';
-import { FormPage } from '@/pages';
-import { Layout } from '@/pages/Layout.tsx';
+import { FormPage, Layout } from '@/pages';
 
 export const router = createBrowserRouter([
   {

@@ -43,5 +43,5 @@ describe('FormStep', () => {
 
     const step = screen.getByTestId('testid');
     expect(step).toHaveTextContent('test');
-  })
+  });
 });

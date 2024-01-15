@@ -13,7 +13,8 @@ beforeEach(() => {
         formState: {
           errors: {}
         },
-        watch: vi.fn()
+        watch: vi.fn(),
+        getValues: vi.fn()
       }))
     };
   });
