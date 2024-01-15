@@ -17,7 +17,7 @@ exports[`FormPageTemplate > should match snapshot 1`] = `
             data-testid="multiStepForm-navigation"
           >
             <div
-              class="form-step "
+              class="form-step active"
               data-testid="form-step-1"
             >
               <div
@@ -41,7 +41,7 @@ exports[`FormPageTemplate > should match snapshot 1`] = `
               </div>
             </div>
             <div
-              class="form-step active"
+              class="form-step "
               data-testid="form-step-2"
             >
               <div
@@ -170,7 +170,7 @@ exports[`FormPageTemplate > should match snapshot 1`] = `
           data-testid="multiStepForm-navigation"
         >
           <div
-            class="form-step "
+            class="form-step active"
             data-testid="form-step-1"
           >
             <div
@@ -194,7 +194,7 @@ exports[`FormPageTemplate > should match snapshot 1`] = `
             </div>
           </div>
           <div
-            class="form-step active"
+            class="form-step "
             data-testid="form-step-2"
           >
             <div
