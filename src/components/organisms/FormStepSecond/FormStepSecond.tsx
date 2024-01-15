@@ -19,6 +19,7 @@ export type SinglePlanType = {
   id: AVAILABLE_PLANS;
   name: string;
   pricePerMonth: number;
+  pricePerYear: number;
   icon: ReactElement;
 };
 

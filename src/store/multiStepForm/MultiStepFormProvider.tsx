@@ -10,7 +10,7 @@ export interface IFormProvider {
 }
 
 const formInitialState: IMultiStepFormState = {
-  activeStep: FORM_STEPS.INFO,
+  activeStep: FORM_STEPS.PLAN,
   formData: {
     name: '',
     email: '',

@@ -3,6 +3,8 @@ import { useFormContext } from 'react-hook-form';
 import { Input } from '@/components/atoms';
 import '@/components/molecules/AddOn/AddOn.scss';
 import { SingleAddOn } from '@/components/organisms/FormStepThird/FormStepThird.tsx';
+import { PAYMENT_PERIODS } from '@/constants';
+import { useMultiStepFormContext } from '@/store';
 
 type InputProps = React.ComponentProps<typeof Input>;
 
@@ -18,6 +20,7 @@ export const AddOn: React.FC<IAddOn> = ({
   testid,
   disabled
 }: IAddOn) => {
+  const { state } = useMultiStepFormContext();
   const { register, setValue, getValues, watch } = useFormContext();
   const isSelected = watch(name) ?? false;
 
@@ -46,7 +49,11 @@ export const AddOn: React.FC<IAddOn> = ({
               <p className="add-on__ttl">{item.name}</p>
               <p className="add-on__desc">{item.description}</p>
             </div>
-            <div className="add-on__price">+${item.pricePerMonth}/mo</div>
+            <div className="add-on__price">
+              {state.paymentPeriod === PAYMENT_PERIODS.PER_MONTH
+                ? `+${item.pricePerMonth}/mo`
+                : `+${item.pricePerYear}/yo`}
+            </div>
           </div>
         </label>
       </div>

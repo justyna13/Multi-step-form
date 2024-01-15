@@ -18,6 +18,7 @@ export type SingleAddOn = {
   id: number;
   name: string;
   pricePerMonth: number;
+  pricePerYear: number;
   description: string;
   fieldName: 'onlineService' | 'largeStorage' | 'customizableProfile';
 };

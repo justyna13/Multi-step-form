@@ -3,11 +3,13 @@ import { FormProvider, useForm } from 'react-hook-form';
 
 import { AddOn } from '@/components/molecules';
 import { SingleAddOn } from '@/components/organisms/FormStepThird/FormStepThird.tsx';
+import { MultiStepFormProvider } from '@/store';
 
 const exampleAddOn: SingleAddOn = {
   id: 1,
   name: 'test',
   pricePerMonth: 12,
+  pricePerYear: 123,
   description: 'test desc',
   fieldName: 'onlineService'
 };
@@ -20,11 +22,13 @@ const meta = {
     (Story, context) => {
       const methods = useForm();
       return (
-        <FormProvider {...methods}>
-          <Story>
-            <AddOn {...context.args} />
-          </Story>
-        </FormProvider>
+        <MultiStepFormProvider>
+          <FormProvider {...methods}>
+            <Story>
+              <AddOn {...context.args} />
+            </Story>
+          </FormProvider>
+        </MultiStepFormProvider>
       );
     }
   ]

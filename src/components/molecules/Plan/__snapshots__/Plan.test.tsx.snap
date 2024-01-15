@@ -41,9 +41,7 @@ exports[`Plan > should match snapshot 1`] = `
           <p
             class="single-plan__desc"
           >
-            $
-            9
-            /mo
+            9/mo
           </p>
         </div>
       </div>
@@ -86,9 +84,7 @@ exports[`Plan > should match snapshot 1`] = `
         <p
           class="single-plan__desc"
         >
-          $
-          9
-          /mo
+          9/mo
         </p>
       </div>
     </div>

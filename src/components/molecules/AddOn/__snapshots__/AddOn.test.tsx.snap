@@ -38,9 +38,7 @@ exports[`AddOn > should match snapshot 1`] = `
               <div
                 class="add-on__price"
               >
-                +$
-                12
-                /mo
+                +12/mo
               </div>
             </div>
           </label>
@@ -82,9 +80,7 @@ exports[`AddOn > should match snapshot 1`] = `
             <div
               class="add-on__price"
             >
-              +$
-              12
-              /mo
+              +12/mo
             </div>
           </div>
         </label>

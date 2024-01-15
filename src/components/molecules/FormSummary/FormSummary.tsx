@@ -1,19 +1,20 @@
 import '@/components/molecules/FormSummary/FormSummary.scss';
 import { SingleAddOn } from '@/components/organisms/FormStepThird/FormStepThird.tsx';
-import { FORM_STEPS } from '@/constants';
-import { availableAddOns } from '@/constants/data.tsx';
-import { availablePlans } from '@/constants/data.tsx';
+import { FORM_STEPS, PAYMENT_PERIODS } from '@/constants';
+import { availableAddOns, availablePlans } from '@/constants/data.tsx';
 import { MultiStepFormActionType, useMultiStepFormContext } from '@/store';
 
 export const FormSummary = () => {
   const { state, dispatch } = useMultiStepFormContext();
 
-  const perMonth = true;
-  const pricePerMonth = state.formData.selectedPlan
-    ? availablePlans.find((plan) => plan.id === state.formData.selectedPlan)
-        ?.pricePerMonth
-    : 0;
-  const pricePerYear = pricePerMonth ? pricePerMonth * 12 : 0;
+  const isPerMonth = state.paymentPeriod === PAYMENT_PERIODS.PER_MONTH;
+  const selectedPlanData = availablePlans.find(
+    (plan) => plan.id === state.formData.selectedPlan
+  );
+  const planPrice = isPerMonth
+    ? selectedPlanData?.pricePerMonth
+    : selectedPlanData?.pricePerYear;
+
   const navigateToSecondStep = () => {
     dispatch({
       type: MultiStepFormActionType.SET_ACTIVE_STEP,
@@ -31,11 +32,7 @@ export const FormSummary = () => {
               Change
             </span>
           </div>
-          {perMonth ? (
-            <span>+${pricePerMonth}/mo</span>
-          ) : (
-            <span>+${pricePerYear}/year</span>
-          )}
+          <span>{isPerMonth ? `+${planPrice}/mo` : `+${planPrice}/year`}</span>
         </div>
         {Object.values(state.formData.addOns).filter((item) => item).length ? (
           <div className="form-summary__add-ons">
@@ -44,7 +41,11 @@ export const FormSummary = () => {
                 <div key={item.id}>
                   <p>{item.name}</p>
                   <p>{state.formData.addOns[item.fieldName]}</p>
-                  <span>+${item.pricePerMonth}/mo</span>
+                  <span>
+                    {isPerMonth
+                      ? `+${item.pricePerMonth}/mo`
+                      : `+${item.pricePerYear}/year`}
+                  </span>
                 </div>
               ) : null
             )}
@@ -53,7 +54,7 @@ export const FormSummary = () => {
       </div>
       <div className="form-summary__total">
         <p>Total (per month/year)</p>
-        <span>+$12/mo</span>
+        <span>{isPerMonth ? `+$12/mo` : `+$12/year`}</span>
       </div>
     </div>
   );

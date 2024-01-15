@@ -40,9 +40,7 @@ exports[`FormStepFourth > should match snapshot 1`] = `
                 </span>
               </div>
               <span>
-                +$
-                0
-                /mo
+                +undefined/mo
               </span>
             </div>
           </div>
@@ -112,9 +110,7 @@ exports[`FormStepFourth > should match snapshot 1`] = `
               </span>
             </div>
             <span>
-              +$
-              0
-              /mo
+              +undefined/mo
             </span>
           </div>
         </div>

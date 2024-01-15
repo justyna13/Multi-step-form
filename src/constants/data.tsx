@@ -10,18 +10,21 @@ export const availablePlans: Array<SinglePlanType> = [
     id: AVAILABLE_PLANS.ARCADE,
     name: 'Arcade',
     pricePerMonth: 9,
+    pricePerYear: 84,
     icon: <ArcadePlanIcon />
   },
   {
     id: AVAILABLE_PLANS.ADVANCED,
     name: 'Advanced',
     pricePerMonth: 12,
+    pricePerYear: 126,
     icon: <AdvancedPlanIcon />
   },
   {
     id: AVAILABLE_PLANS.PRO,
     name: 'Pro',
     pricePerMonth: 15,
+    pricePerYear: 142,
     icon: <ProPlanIcon />
   }
 ];
@@ -32,6 +35,7 @@ export const availableAddOns: Array<SingleAddOn> = [
     name: 'Online service',
     description: 'Access to multiplayer games',
     pricePerMonth: 1,
+    pricePerYear: 7,
     fieldName: 'onlineService'
   },
   {
@@ -39,6 +43,7 @@ export const availableAddOns: Array<SingleAddOn> = [
     name: 'Larger storage',
     description: 'Extra 1TB of cloud save',
     pricePerMonth: 2,
+    pricePerYear: 16,
     fieldName: 'largeStorage'
   },
   {
@@ -46,6 +51,7 @@ export const availableAddOns: Array<SingleAddOn> = [
     name: 'Customizable Profile',
     description: 'Custom theme on your profile',
     pricePerMonth: 2,
+    pricePerYear: 28,
     fieldName: 'customizableProfile'
   }
 ];

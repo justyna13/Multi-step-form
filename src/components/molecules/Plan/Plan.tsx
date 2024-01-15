@@ -1,8 +1,7 @@
-import React from 'react';
-
 import { SinglePlanType } from '@/components/organisms/FormStepSecond/FormStepSecond.tsx';
 import '@/components/molecules/Plan/Plan.scss';
-import { AVAILABLE_PLANS } from '@/constants';
+import { AVAILABLE_PLANS, PAYMENT_PERIODS } from '@/constants';
+import { useMultiStepFormContext } from '@/store';
 
 interface IPlan {
   item: SinglePlanType;
@@ -17,6 +16,7 @@ export const Plan: React.FC<IPlan> = ({
   isSelected,
   onPlanSelected
 }: IPlan) => {
+  const { state } = useMultiStepFormContext();
   return (
     <div
       className={`single-plan ${isSelected ? 'selected' : ''}`}
@@ -25,7 +25,11 @@ export const Plan: React.FC<IPlan> = ({
       {item.icon}
       <div>
         <p className="single-plan__ttl">{item.name}</p>
-        <p className="single-plan__desc">${item.pricePerMonth}/mo</p>
+        <p className="single-plan__desc">
+          {state.paymentPeriod === PAYMENT_PERIODS.PER_MONTH
+            ? `${item.pricePerMonth}/mo`
+            : `${item.pricePerYear}/yo`}
+        </p>
       </div>
     </div>
   );
