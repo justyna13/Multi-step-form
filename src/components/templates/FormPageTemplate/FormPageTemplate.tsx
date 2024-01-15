@@ -1,9 +1,11 @@
 import '@/components/templates/FormPageTemplate/FormPageTemplate.scss';
 import { DevTool } from '@hookform/devtools';
+import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import { FormNavigation } from '@/components/molecules';
 import {
+  FormConfirmation,
   FormStepFirst,
   FormStepFourth,
   FormStepSecond,
@@ -36,12 +38,20 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
 }: IDashboardPageTemplate) => {
   const { state, dispatch } = useMultiStepFormContext();
   const methods = useForm<IForm>({ mode: 'onChange' });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const setActiveStep = (step: FORM_STEPS) => {
     dispatch({
       type: MultiStepFormActionType.SET_ACTIVE_STEP,
       payload: { activeStep: step }
     });
+  };
+
+  const submitData = async () => {
+    const isFormInvalid = Object.keys(methods.formState.errors).length > 0;
+    if (isFormInvalid) return;
+
+    setIsFormSubmitted(true);
   };
 
   const renderActiveStep = (index: FORM_STEPS) => {
@@ -74,28 +84,29 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
           <FormStepFourth
             testid={'multiStepForm-step-fourth'}
             onBtnPrevClicked={() => setActiveStep(FORM_STEPS.ADDITIONAL)}
+            onBtnConfirmClicked={() => submitData()}
           />
         );
     }
   };
 
-  const submitData = (data: IForm) => {
-    // eslint-disable-next-line no-console
-    console.log(data, methods.formState.errors);
-  };
   return (
     <div className="form-card" data-testid={testid}>
       <div className="form-wrapper">
         <FormNavigation testid={'multiStepForm-navigation'} />
         <div className="form-inner">
-          <FormProvider {...methods}>
-            <form
-              className="multipstep-form"
-              onSubmit={methods.handleSubmit(submitData)}
-              noValidate>
-              {renderActiveStep(state.activeStep)}
-            </form>
-          </FormProvider>
+          {isFormSubmitted ? (
+            <FormConfirmation />
+          ) : (
+            <FormProvider {...methods}>
+              <form
+                className="multipstep-form"
+                onSubmit={methods.handleSubmit(submitData)}
+                noValidate>
+                {renderActiveStep(state.activeStep)}
+              </form>
+            </FormProvider>
+          )}
           <DevTool control={methods.control} />
         </div>
       </div>

@@ -6,11 +6,13 @@ interface IFormStepFourth {
   testid: string;
   className?: string;
   onBtnPrevClicked: () => void;
+  onBtnConfirmClicked: () => void;
 }
 
 export const FormStepFourth: React.FC<IFormStepFourth> = ({
   testid,
-  onBtnPrevClicked
+  onBtnPrevClicked,
+  onBtnConfirmClicked
 }: IFormStepFourth) => {
   return (
     <div data-testid={testid}>
@@ -27,7 +29,12 @@ export const FormStepFourth: React.FC<IFormStepFourth> = ({
           buttonText="Go Back"
           onClick={onBtnPrevClicked}
         />
-        <Button type="submit" variant="next" buttonText="Confirm" />
+        <Button
+          type="submit"
+          variant="next"
+          buttonText="Confirm"
+          onClick={onBtnConfirmClicked}
+        />
       </div>
     </div>
   );

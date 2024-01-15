@@ -5,7 +5,7 @@ import { IMultiStepFormState } from '@/store/multiStepForm/MultiStepFormConextTy
 import { MultiStepFormContext } from '@/store/multiStepForm/MultiStepFormContext.ts';
 import { multiStepFormReducer } from '@/store/multiStepForm/MultiStepFormReducer.tsx';
 
-interface IFormProvider {
+export interface IFormProvider {
   children: React.ReactNode;
 }
 
