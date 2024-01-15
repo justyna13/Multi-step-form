@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { FormStep } from '@/components/atoms';
 
 const meta = {
-  title: 'Atoms/FormSteps',
+  title: 'Atoms/FormStep',
   component: FormStep,
   tags: ['autodocs'],
   decorators: [
