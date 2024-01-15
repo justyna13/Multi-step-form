@@ -4,6 +4,7 @@ import { Header } from '@/components/atoms';
 import { Button } from '@/components/atoms';
 import { AddOn } from '@/components/molecules';
 import '@/components/organisms/FormStepThird/FormStepThird.scss';
+import { AVAILABLE_ADDONS } from '@/constants';
 import { availableAddOns } from '@/constants/data.tsx';
 import { MultiStepFormActionType, useMultiStepFormContext } from '@/store';
 
@@ -20,7 +21,7 @@ export type SingleAddOn = {
   pricePerMonth: number;
   pricePerYear: number;
   description: string;
-  fieldName: 'onlineService' | 'largeStorage' | 'customizableProfile';
+  fieldName: AVAILABLE_ADDONS;
 };
 
 export const FormStepThird: React.FC<IFormStepThird> = ({
@@ -44,6 +45,7 @@ export const FormStepThird: React.FC<IFormStepThird> = ({
         }
       }
     });
+    dispatch({ type: MultiStepFormActionType.UPDATE_TOTAL_PRICE });
     onBtnNextClicked();
   };
 

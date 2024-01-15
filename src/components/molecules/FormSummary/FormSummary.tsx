@@ -54,7 +54,11 @@ export const FormSummary = () => {
       </div>
       <div className="form-summary__total">
         <p>Total (per month/year)</p>
-        <span>{isPerMonth ? `+$12/mo` : `+$12/year`}</span>
+        <span>
+          {isPerMonth
+            ? `+$${state.totalPrice}/mo`
+            : `+$${state.totalPrice}/year`}
+        </span>
       </div>
     </div>
   );

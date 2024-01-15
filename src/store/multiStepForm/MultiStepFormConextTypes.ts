@@ -17,7 +17,6 @@ export interface IMultiStepFormState {
     };
   };
   totalPrice: number;
-  currency: string;
   paymentPeriod: PAYMENT_PERIODS | null;
 }
 

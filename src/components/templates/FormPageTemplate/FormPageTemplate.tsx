@@ -29,7 +29,6 @@ interface IForm {
     customizableProfile: boolean;
   };
   totalPrice: number;
-  currency: string;
   paymentPeriod: PAYMENT_PERIODS;
 }
 

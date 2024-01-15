@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { describe, expect } from 'vitest';
 
-import { FORM_STEPS, PAYMENT_PERIODS } from '@/constants';
+import { AVAILABLE_PLANS, FORM_STEPS, PAYMENT_PERIODS } from '@/constants';
 import {
   MultiStepFormActionType,
   MultiStepFormProvider,
@@ -20,15 +20,14 @@ const initialState = {
     name: '',
     email: '',
     phone: '',
-    selectedPlan: null,
+    selectedPlan: AVAILABLE_PLANS.PRO,
     addOns: {
-      onlineService: false,
-      largeStorage: false,
-      customizableProfile: false
+      onlineService: true,
+      largeStorage: true,
+      customizableProfile: true
     }
   },
   totalPrice: 0,
-  currency: 'EUR',
   paymentPeriod: PAYMENT_PERIODS.PER_MONTH
 };
 
@@ -76,6 +75,15 @@ describe('MultiStepFormContext', () => {
 
     const newState = multiStepFormReducer(initialState, action);
     expect(newState.formData.name).toEqual('Test name');
+  });
+
+  it('should UPDATE_TOTAL_PRICE action update totalPrice in state', () => {
+    const action = {
+      type: MultiStepFormActionType.UPDATE_TOTAL_PRICE
+    };
+
+    const newState = multiStepFormReducer(initialState, action);
+    expect(newState.totalPrice).toEqual(20);
   });
 
   it('should UPDATE_PAYMENT_PERIOD action update paymentPeriod in state', () => {

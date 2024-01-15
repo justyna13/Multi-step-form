@@ -3,7 +3,8 @@ import { AVAILABLE_PLANS, FORM_STEPS, PAYMENT_PERIODS } from '@/constants';
 export enum MultiStepFormActionType {
   SET_ACTIVE_STEP = 'SET_ACTIVE_STEP',
   UPDATE_FORM_DATA = 'UPDATE_FORM_DATA',
-  UPDATE_PAYMENT_PERIOD = 'UPDATE_PAYMENT_PERIOD'
+  UPDATE_PAYMENT_PERIOD = 'UPDATE_PAYMENT_PERIOD',
+  UPDATE_TOTAL_PRICE = 'UPDATE_TOTAL_PRICE'
 }
 
 type TPayloadActiveStep = {
@@ -25,7 +26,7 @@ type TPayloadFormData = {
 };
 
 type TPayloadPaymentPeriod = {
-  paymentPeriod?: PAYMENT_PERIODS;
+  paymentPeriod: PAYMENT_PERIODS;
 };
 
 export type TPayloadAction =
@@ -40,6 +41,9 @@ export type TPayloadAction =
   | {
       type: MultiStepFormActionType.UPDATE_PAYMENT_PERIOD;
       payload: TPayloadPaymentPeriod;
+    }
+  | {
+      type: MultiStepFormActionType.UPDATE_TOTAL_PRICE;
     }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   | any;

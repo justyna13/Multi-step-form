@@ -3,6 +3,7 @@ import { describe, expect } from 'vitest';
 
 import { AddOn } from '@/components/molecules';
 import { SingleAddOn } from '@/components/organisms/FormStepThird/FormStepThird.tsx';
+import { AVAILABLE_ADDONS } from '@/constants';
 import {
   IFormProvider,
   MultiStepFormProvider
@@ -14,10 +15,8 @@ const exampleAddOn: SingleAddOn = {
   pricePerMonth: 12,
   pricePerYear: 123,
   description: 'test desc',
-  fieldName: 'onlineService'
+  fieldName: AVAILABLE_ADDONS.ONLINE_SERVICE
 };
-
-const mockClickFn = vi.fn();
 
 const formWrapper = ({ children }: IFormProvider) => (
   <MultiStepFormProvider>{children}</MultiStepFormProvider>
@@ -52,15 +51,5 @@ describe('AddOn', () => {
     expect(addOnWrapper).toHaveTextContent(exampleAddOn.name);
     expect(addOnWrapper).toHaveTextContent(exampleAddOn.description);
     expect(addOnWrapper).toHaveTextContent(`${exampleAddOn.pricePerMonth}`);
-  });
-
-  it('should react onClick', () => {
-    render(<AddOn testid={'test'} name="test" item={exampleAddOn} />, {
-      wrapper: formWrapper
-    });
-
-    // const addOnWrapper = screen.getByTestId('test');
-    expect(mockClickFn).toBeCalledTimes(0);
-    // todo
   });
 });

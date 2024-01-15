@@ -3,7 +3,7 @@ import { ReactComponent as ArcadePlanIcon } from '@/assets/icons/icon-arcade.svg
 import { ReactComponent as ProPlanIcon } from '@/assets/icons/icon-pro.svg';
 import { SinglePlanType } from '@/components/organisms/FormStepSecond/FormStepSecond.tsx';
 import { SingleAddOn } from '@/components/organisms/FormStepThird/FormStepThird.tsx';
-import { AVAILABLE_PLANS } from '@/constants/index.ts';
+import { AVAILABLE_ADDONS, AVAILABLE_PLANS } from '@/constants/index.ts';
 
 export const availablePlans: Array<SinglePlanType> = [
   {
@@ -36,7 +36,7 @@ export const availableAddOns: Array<SingleAddOn> = [
     description: 'Access to multiplayer games',
     pricePerMonth: 1,
     pricePerYear: 7,
-    fieldName: 'onlineService'
+    fieldName: AVAILABLE_ADDONS.ONLINE_SERVICE
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ export const availableAddOns: Array<SingleAddOn> = [
     description: 'Extra 1TB of cloud save',
     pricePerMonth: 2,
     pricePerYear: 16,
-    fieldName: 'largeStorage'
+    fieldName: AVAILABLE_ADDONS.LARGE_STORAGE
   },
   {
     id: 3,
@@ -52,6 +52,6 @@ export const availableAddOns: Array<SingleAddOn> = [
     description: 'Custom theme on your profile',
     pricePerMonth: 2,
     pricePerYear: 28,
-    fieldName: 'customizableProfile'
+    fieldName: AVAILABLE_ADDONS.CUSTOMIZABLE_PROFILE
   }
 ];

@@ -56,6 +56,7 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
       }
     });
     setStepInvalid(false);
+    dispatch({ type: MultiStepFormActionType.UPDATE_TOTAL_PRICE });
   };
 
   const handlePaymentPeriodChanged = () => {
@@ -69,6 +70,8 @@ export const FormStepSecond: React.FC<IFormStepSecond> = ({
           : PAYMENT_PERIODS.PER_MONTH
       }
     });
+
+    dispatch({ type: MultiStepFormActionType.UPDATE_TOTAL_PRICE });
   };
 
   return (

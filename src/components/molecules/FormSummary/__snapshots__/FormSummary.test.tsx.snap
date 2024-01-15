@@ -37,7 +37,7 @@ exports[`FormSummary > should match snapshot 1`] = `
             Total (per month/year)
           </p>
           <span>
-            +$12/mo
+            +$0/mo
           </span>
         </div>
       </div>
@@ -76,7 +76,7 @@ exports[`FormSummary > should match snapshot 1`] = `
           Total (per month/year)
         </p>
         <span>
-          +$12/mo
+          +$0/mo
         </span>
       </div>
     </div>

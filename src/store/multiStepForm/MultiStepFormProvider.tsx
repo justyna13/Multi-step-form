@@ -10,7 +10,7 @@ export interface IFormProvider {
 }
 
 const formInitialState: IMultiStepFormState = {
-  activeStep: FORM_STEPS.PLAN,
+  activeStep: FORM_STEPS.INFO,
   formData: {
     name: '',
     email: '',
@@ -23,7 +23,6 @@ const formInitialState: IMultiStepFormState = {
     }
   },
   totalPrice: 0,
-  currency: 'EUR',
   paymentPeriod: PAYMENT_PERIODS.PER_MONTH
 };
 

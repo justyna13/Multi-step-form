@@ -24,3 +24,9 @@ export enum PAYMENT_PERIODS {
   PER_MONTH = 'PER_MONTH',
   PER_YEAR = 'PER_YEAR'
 }
+
+export enum AVAILABLE_ADDONS {
+  ONLINE_SERVICE = 'onlineService',
+  LARGE_STORAGE = 'largeStorage',
+  CUSTOMIZABLE_PROFILE = 'customizableProfile'
+}

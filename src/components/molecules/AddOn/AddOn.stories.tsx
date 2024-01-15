@@ -3,6 +3,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 
 import { AddOn } from '@/components/molecules';
 import { SingleAddOn } from '@/components/organisms/FormStepThird/FormStepThird.tsx';
+import { AVAILABLE_ADDONS } from '@/constants';
 import { MultiStepFormProvider } from '@/store';
 
 const exampleAddOn: SingleAddOn = {
@@ -11,7 +12,7 @@ const exampleAddOn: SingleAddOn = {
   pricePerMonth: 12,
   pricePerYear: 123,
   description: 'test desc',
-  fieldName: 'onlineService'
+  fieldName: AVAILABLE_ADDONS.ONLINE_SERVICE
 };
 
 const meta = {
