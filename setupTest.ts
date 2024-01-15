@@ -21,5 +21,5 @@ beforeEach(() => {
 
 afterEach(() => {
   vi.clearAllMocks();
-  cleanup()
+  cleanup();
 });
