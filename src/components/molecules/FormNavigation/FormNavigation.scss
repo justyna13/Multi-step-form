@@ -5,3 +5,28 @@
   padding: 24px 16px;
   border-radius: 8px;
 }
+
+
+@media (max-width: 767px) {
+  .form-navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: -1;
+    border-radius: 0;
+
+    display: flex;
+    justify-content: center;
+    background-image: url("assets/images/bg-sidebar-mobile.svg");
+
+    .form-step {
+      margin-bottom: 0;
+      &__info,
+      &__title {
+        display: none;
+      }
+    }
+  }
+}

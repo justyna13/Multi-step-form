@@ -12,5 +12,13 @@
     border-radius: 8px;
     padding: 16px;
   }
+}
 
+@media (max-width: 767px) {
+  .form-step--second {
+    .plans-wr {
+      flex-direction: column;
+
+    }
+  }
 }

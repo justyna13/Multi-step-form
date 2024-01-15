@@ -27,3 +27,31 @@ body {
     margin-bottom: 12px;
   }
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+  body {
+    align-items: baseline;
+    padding-top: 90px;
+  }
+
+  .step-bottom {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: calc(100vw - 2rem);
+    background-color: white;
+    padding: .25rem 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    .main-btn {
+      margin-top: 1rem;
+    }
+  }
+}
