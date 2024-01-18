@@ -1,6 +1,6 @@
-import { ReactComponent as AdvancedPlanIcon } from '@/assets/icons/icon-advanced.svg';
-import { ReactComponent as ArcadePlanIcon } from '@/assets/icons/icon-arcade.svg';
-import { ReactComponent as ProPlanIcon } from '@/assets/icons/icon-pro.svg';
+import AdvancedPlanIcon from '@/assets/icons/icon-advanced.svg?react';
+import ArcadePlanIcon from '@/assets/icons/icon-arcade.svg?react';
+import ProPlanIcon from '@/assets/icons/icon-pro.svg?react';
 import { SinglePlanType } from '@/components/organisms/FormStepSecond/FormStepSecond.tsx';
 import { SingleAddOn } from '@/components/organisms/FormStepThird/FormStepThird.tsx';
 import { AVAILABLE_ADDONS, AVAILABLE_PLANS } from '@/constants/index.ts';

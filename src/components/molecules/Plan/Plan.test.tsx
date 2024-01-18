@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { describe, expect } from 'vitest';
 
-import { ReactComponent as ArcadePlanIcon } from '@/assets/icons/icon-arcade.svg';
+import ArcadePlanIcon from '@/assets/icons/icon-arcade.svg?react';
 import { Plan } from '@/components/molecules';
 import { AVAILABLE_PLANS } from '@/constants';
 import {

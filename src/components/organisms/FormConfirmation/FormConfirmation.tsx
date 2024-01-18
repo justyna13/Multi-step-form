@@ -1,4 +1,4 @@
-import { ReactComponent as ConfirmationIcon } from '@/assets/icons/icon-thank-you.svg';
+import ConfirmationIcon from '@/assets/icons/icon-thank-you.svg?react';
 import '@/components/organisms/FormConfirmation/FormConfirmation.style.scss';
 
 export const FormConfirmation = () => {

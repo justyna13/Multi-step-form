@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { ReactComponent as ArcadePlanIcon } from '@/assets/icons/icon-arcade.svg';
+import ArcadePlanIcon from '@/assets/icons/icon-arcade.svg?react';
 import { Plan } from '@/components/molecules';
 import { AVAILABLE_PLANS } from '@/constants';
 import { MultiStepFormProvider } from '@/store';
