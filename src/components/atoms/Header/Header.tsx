@@ -12,7 +12,7 @@ export const Header: React.FC<IHeader> = ({
 }: IHeader) => {
   return (
     <div className="header" data-testuid={testid}>
-      <h2>{title}</h2>
+      <h2 data-testid={'step-title'}>{title}</h2>
       <p>{description}</p>
     </div>
   );

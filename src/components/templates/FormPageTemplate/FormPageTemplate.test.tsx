@@ -33,8 +33,8 @@ beforeEach(() => {
     };
   });
 
-  vi.mock('react-hook-form', async () => {
-    const actual = (await vi.importActual('react-hook-form')) as object;
+  vi.mock('react-hook-pages', async () => {
+    const actual = (await vi.importActual('react-hook-pages')) as object;
     return {
       ...actual,
       useFormContext: vi.fn(() => ({
@@ -83,9 +83,9 @@ describe('FormPageTemplate', () => {
   // it('should show active step component', () => {
   //   render(<FormPageTemplate testid={'test'} />, { wrapper: formWrapper});
   //
-  //   const form = screen.getByTestId('multistep-form');
+  //   const pages = screen.getByTestId('multistep-pages');
   //
-  //   fireEvent.submit(form);
+  //   fireEvent.submit(pages);
   //   expect(mockHandleSubmit).toBeCalled();
   // });
 });

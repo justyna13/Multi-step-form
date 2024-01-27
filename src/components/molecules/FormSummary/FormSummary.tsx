@@ -23,7 +23,7 @@ export const FormSummary = () => {
   };
 
   return (
-    <div className="form-summary" data-testid={'form-summary'}>
+    <div className="form-summary" data-testid={'pages-summary'}>
       <div className="form-summary__inner">
         <div className="form-summary__plan">
           <div>

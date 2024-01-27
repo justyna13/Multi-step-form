@@ -32,6 +32,7 @@ export default defineConfig((env) =>
             '**/*{.,-}spec.{js,cjs,mjs,ts,tsx,jsx}',
             '**/{webpack,vite,vitest,jest,build}.config.*',
             '**/.{eslint,mocha,prettier}rc.{js,cjs,yml}',
+            'cypress/**',
             'src/constants/*.ts',
             'src/pages/**/__mocks__/**',
             'src/App.tsx',

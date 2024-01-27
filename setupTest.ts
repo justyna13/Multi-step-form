@@ -4,8 +4,8 @@ import { afterEach } from 'vitest';
 
 const mockRegister = vi.fn();
 beforeEach(() => {
-  vi.mock('react-hook-form', async () => {
-    const actual = (await vi.importActual('react-hook-form')) as object;
+  vi.mock('react-hook-pages', async () => {
+    const actual = (await vi.importActual('react-hook-pages')) as object;
     return {
       ...actual,
       useFormContext: vi.fn(() => ({

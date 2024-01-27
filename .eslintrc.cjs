@@ -11,6 +11,7 @@ module.exports = {
     'node_modules/*',
     'dist',
     '.eslintrc.cjs',
+    'cypress'
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'import'],

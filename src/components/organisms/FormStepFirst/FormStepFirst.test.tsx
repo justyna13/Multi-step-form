@@ -15,8 +15,8 @@ const mockRegister = vi.fn();
 const mockBtnNextClicked = vi.fn();
 
 beforeEach(() => {
-  vi.mock('react-hook-form', async () => {
-    const actual = (await vi.importActual('react-hook-form')) as object;
+  vi.mock('react-hook-pages', async () => {
+    const actual = (await vi.importActual('react-hook-pages')) as object;
     return {
       ...actual,
       useFormContext: vi.fn(() => ({
@@ -65,7 +65,7 @@ describe('FormStepFirst', () => {
     expect(formFirstStep).not.toHaveClass('hidden');
   });
 
-  it('should show error msg on nextBtn click and form invalid', () => {
+  it('should show error msg on nextBtn click and pages invalid', () => {
     render(
       <FormStepFirst
         onBtnNextClicked={() => {}}
@@ -74,15 +74,15 @@ describe('FormStepFirst', () => {
       { wrapper: formWrapper }
     );
 
-    const nameField = screen.getByTestId('form-input-name');
+    const nameField = screen.getByTestId('pages-input-name');
     expect(nameField).toBeInTheDocument();
     expect(nameField).toHaveTextContent('Name error');
 
-    const emailField = screen.getByTestId('form-input-email');
+    const emailField = screen.getByTestId('pages-input-email');
     expect(emailField).toBeInTheDocument();
     expect(emailField).toHaveTextContent('Email error');
 
-    const phoneField = screen.getByTestId('form-input-phone');
+    const phoneField = screen.getByTestId('pages-input-phone');
     expect(phoneField).toBeInTheDocument();
     expect(phoneField).toHaveTextContent('Phone error');
   });

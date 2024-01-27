@@ -68,9 +68,9 @@ describe('FormStepSecond', () => {
     expect(mockBtnPrevClicked).toBeCalledTimes(1);
   });
 
-  it('should  react onBtnNextClicked when form valid', () => {
-    vi.mock('react-hook-form', async () => {
-      const actual = (await vi.importActual('react-hook-form')) as object;
+  it('should  react onBtnNextClicked when pages valid', () => {
+    vi.mock('react-hook-pages', async () => {
+      const actual = (await vi.importActual('react-hook-pages')) as object;
       return {
         ...actual,
         useFormContext: vi.fn(() => ({

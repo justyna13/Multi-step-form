@@ -100,7 +100,7 @@ export const FormPageTemplate: React.FC<IDashboardPageTemplate> = ({
             <FormProvider {...methods}>
               <form
                 className="multipstep-form"
-                data-testid={'multistep-form'}
+                data-testid={'multistep-pages'}
                 onSubmit={methods.handleSubmit(submitData)}
                 noValidate>
                 {renderActiveStep(state.activeStep)}
