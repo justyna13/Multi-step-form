@@ -24,6 +24,7 @@ export const ToggleSwitch: React.FC<IToggleSwitch> = ({
       <input
         type="checkbox"
         className="toggle-switch-checkbox"
+        data-testid={`checkbox-${name}`}
         id={name}
         checked={checked}
         {...register(name)}

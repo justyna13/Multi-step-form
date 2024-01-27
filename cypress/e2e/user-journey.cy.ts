@@ -19,7 +19,7 @@ describe('User journey - user fills the pages', () => {
 
     // second step active
     formPage.elements.getActiveStepTitle().should('contain', 'Select your plan');
-    formPage.elements.getPlanFirstOption().click();
+    formPage.elements.getArcanePlanOption().click();
     formPage.elements.getNextStepBtn().should('exist');
 
     formPage.clickNextStepBtn();
